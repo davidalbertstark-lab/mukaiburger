@@ -1,0 +1,17 @@
+export const IMGS = {
+  hero: "/images/hero.jpg",
+  project1: "/images/project-1.jpg",
+  project2: "/images/project-2.jpg",
+  project3: "/images/project-3.jpg",
+  project4: "/images/project-4.jpg",
+  process: "/images/process.jpg",
+  cta: "/images/cta.jpg",
+  sec_residential: "/images/project-1.jpg",
+  sec_commercial: "/images/project-2.jpg",
+  sec_government: "/images/process.jpg",
+  sec_healthcare: "/images/project-3.jpg",
+  sec_educational: "/images/project-4.jpg",
+  sec_industrial: "/images/cta.jpg",
+  sec_infra: "/images/project-2.jpg",
+  sec_institutional: "/images/project-3.jpg",
+} as const;
