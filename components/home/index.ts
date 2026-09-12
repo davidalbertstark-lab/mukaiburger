@@ -1,0 +1,13 @@
+export { Hero } from "./Hero";
+export { CredentialsBand } from "./CredentialsBand";
+export { WhoWeAre } from "./WhoWeAre";
+export { CompanyFilm } from "./CompanyFilm";
+export { LegacyStrength } from "./LegacyStrength";
+export { ServicesSection } from "./ServicesSection";
+export { SectorsSection } from "./SectorsSection";
+export { IconicProjects } from "./IconicProjects";
+export { OurApproach } from "./OurApproach";
+export { WhyChooseUs } from "./WhyChooseUs";
+export { Certifications } from "./Certifications";
+export { FinalCTA } from "./FinalCTA";
+export { ScrollToTop } from "./ScrollToTop";

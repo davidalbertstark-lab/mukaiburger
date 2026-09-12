@@ -4,16 +4,42 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "Mukaiburger Engineering Nigeria Limited",
+  metadataBase: new URL("https://mukaiburger.vercel.app"),
+  title: {
+    default: "Mukaiburger Engineering Nigeria Limited",
+    template: "%s | Mukaiburger Engineering",
+  },
   description:
-    "Engineering, construction & infrastructure solutions built on precision, reliability and trust.",
+    "Engineering, construction & infrastructure solutions built on precision, reliability and trust across Nigeria.",
+  keywords: [
+    "engineering",
+    "construction Nigeria",
+    "infrastructure",
+    "Abuja engineering contractor",
+    "civil engineering",
+    "project management",
+  ],
+  authors: [{ name: "Albert David", url: "https://github.com/davidalbertstark-lab" }],
+  creator: "Albert David",
   openGraph: {
     title: "Mukaiburger Engineering Nigeria Limited",
     description:
-      "Engineering, construction & infrastructure solutions built on precision, reliability and trust.",
+      "Engineering, construction & infrastructure solutions built on precision, reliability and trust across Nigeria.",
+    url: "https://mukaiburger.vercel.app",
+    siteName: "Mukaiburger Engineering",
+    locale: "en_US",
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mukaiburger Engineering Nigeria Limited",
+    description:
+      "Engineering, construction & infrastructure solutions built on precision, reliability and trust across Nigeria.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
