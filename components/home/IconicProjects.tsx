@@ -5,16 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Reveal } from "@/components/site/Reveal";
-import { IMGS } from "./constants";
+import { VERIFIED_PROJECTS } from "./constants";
 
-const ICONIC_PROJECTS = [
-  { slug: "commercial-office-complex", t: "Commercial Office Complex", loc: "Abuja, FCT", cat: "Building Construction", year: "2024", img: IMGS.cta },
-  { slug: "inter-city-road-drainage", t: "Inter-City Road & Drainage", loc: "Kaduna State", cat: "Civil Engineering", year: "2023", img: IMGS.project2 },
-  { slug: "vertical-tower-development", t: "Vertical Tower Development", loc: "Abuja, FCT", cat: "Building Construction", year: "2023", img: IMGS.project1 },
-  { slug: "site-preparation-earthworks", t: "Site Preparation & Earthworks", loc: "Niger State", cat: "Civil Engineering", year: "2023", img: IMGS.project4 },
-  { slug: "institutional-facility-complex", t: "Institutional Facility Complex", loc: "Lagos State", cat: "Building Construction", year: "2022", img: IMGS.process },
-  { slug: "road-rehabilitation-project", t: "Road Rehabilitation Project", loc: "Abuja, FCT", cat: "Civil Engineering", year: "2022", img: IMGS.project3 },
-];
+const ICONIC_PROJECTS = VERIFIED_PROJECTS.slice(0, 6).map((p) => ({
+  slug: p.slug,
+  t: p.title,
+  loc: p.location,
+  cat: p.category,
+  year: p.year,
+  img: p.image,
+}));
 
 export function IconicProjects() {
   const [isPaused, setIsPaused] = useState(false);
@@ -87,7 +87,7 @@ export function IconicProjects() {
             {allCards.map((p, i) => (
               <Link
                 key={`${p.slug}-${i}`}
-                href={`/projects/${p.slug}`}
+                href={`/projects#${p.slug}`}
                 className="group relative flex-shrink-0 block"
                 style={{ width: "clamp(240px, 28vw, 380px)" }}
                 onMouseEnter={() => setHoveredIdx(i)}

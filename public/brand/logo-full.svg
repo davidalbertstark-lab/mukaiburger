@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1350" width="1200" height="1350">
+  <defs>
+    <linearGradient id="gearRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D63A29"/>
+      <stop offset="100%" stop-color="#B82818"/>
+    </linearGradient>
+    <linearGradient id="b1_wall" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8E2D8"/>
+    </linearGradient>
+    <linearGradient id="b2_wall" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F28C38"/>
+      <stop offset="100%" stop-color="#D9681E"/>
+    </linearGradient>
+    <linearGradient id="b3_wall" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD000"/>
+      <stop offset="100%" stop-color="#F5B300"/>
+    </linearGradient>
+    <linearGradient id="b4_wall" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8C4A32"/>
+      <stop offset="100%" stop-color="#6E321E"/>
+    </linearGradient>
+    <linearGradient id="roadGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#242628"/>
+      <stop offset="100%" stop-color="#111213"/>
+    </linearGradient>
+    <linearGradient id="bannerRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E61E14"/>
+      <stop offset="100%" stop-color="#C41208"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Scaled Emblem (Centered at x=600, y=360) -->
+  <g transform="translate(100, -80)">
+    <!-- The Gear -->
+    <path d="M 800.0,480.0 L 799.4,498.8 L 848.7,509.8 L 845.4,536.3 L 794.9,534.9 L 792.5,546.8 L 787.7,565.0 L 833.4,586.7 L 824.3,611.8 L 775.3,599.1 L 770.3,610.2 L 761.6,626.9 L 801.3,658.2 L 786.8,680.6 L 741.9,657.4 L 734.5,667.0 L 722.3,681.4 L 754.1,720.7 L 735.0,739.4 L 696.4,706.8 L 687.0,714.5 L 672.0,725.8 L 694.1,771.2 L 671.4,785.2 L 641.0,744.8 L 630.2,750.3 L 612.9,757.9 L 624.5,807.1 L 599.2,815.7 L 578.5,769.5 L 566.8,772.5 L 548.3,776.1 L 548.5,826.6 L 522.0,829.3 L 512.1,779.8 L 500.0,780.0 L 481.2,779.4 L 470.2,828.7 L 443.7,825.4 L 445.1,774.9 L 433.2,772.5 L 415.0,767.7 L 393.3,813.4 L 368.2,804.3 L 380.9,755.3 L 369.8,750.3 L 353.1,741.6 L 321.8,781.3 L 299.4,766.8 L 322.6,721.9 L 313.0,714.5 L 298.6,702.3 L 259.3,734.1 L 240.6,715.0 L 273.2,676.4 L 265.5,667.0 L 254.2,652.0 L 208.8,674.1 L 194.8,651.4 L 235.2,621.0 L 229.7,610.2 L 222.1,592.9 L 172.9,604.5 L 164.3,579.2 L 210.5,558.5 L 207.5,546.8 L 203.9,528.3 L 153.4,528.5 L 150.7,502.0 L 200.2,492.1 L 200.0,480.0 L 200.6,461.2 L 151.3,450.2 L 154.6,423.7 L 205.1,425.1 L 207.5,413.2 L 212.3,395.0 L 166.6,373.3 L 175.7,348.2 L 224.7,360.9 L 229.7,349.8 L 238.4,333.1 L 198.7,301.8 L 213.2,279.4 L 258.1,302.6 L 265.5,293.0 L 277.7,278.6 L 245.9,239.3 L 265.0,220.6 L 303.6,253.2 L 313.0,245.5 L 328.0,234.2 L 305.9,188.8 L 328.6,174.8 L 359.0,215.2 L 369.8,209.7 L 387.1,202.1 L 375.5,152.9 L 400.8,144.3 L 421.5,190.5 L 433.2,187.5 L 451.7,183.9 L 451.5,133.4 L 478.0,130.7 L 487.9,180.2 L 500.0,180.0 L 518.8,180.6 L 529.8,131.3 L 556.3,134.6 L 554.9,185.1 L 566.8,187.5 L 585.0,192.3 L 606.7,146.6 L 631.8,155.7 L 619.1,204.7 L 630.2,209.7 L 646.9,218.4 L 678.2,178.7 L 700.6,193.2 L 677.4,238.1 L 687.0,245.5 L 701.4,257.7 L 740.7,225.9 L 759.4,245.0 L 726.8,283.6 L 734.5,293.0 L 745.8,308.0 L 791.2,285.9 L 805.2,308.6 L 764.8,339.0 L 770.3,349.8 L 777.9,367.1 L 827.1,355.5 L 835.7,380.8 L 789.5,401.5 L 792.5,413.2 L 796.1,431.7 L 846.6,431.5 L 849.3,458.0 L 799.8,467.9 Z" fill="url(#gearRed)" filter="url(#softShadow)"/>
+
+    <!-- "MENL" -->
+    <g transform="translate(500, 385)">
+      <text x="0" y="0" font-family="'Comfortaa', 'Eurostile', 'Montserrat', 'Arial Black', sans-serif" 
+            font-size="88" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="14">MENL</text>
+    </g>
+
+    <!-- The 4 Buildings -->
+    <polygon points="310,485 415,445 415,640 310,640" fill="url(#b1_wall)"/>
+    <polygon points="415,445 425,450 425,640 415,640" fill="#C5BAAA"/>
+    <rect x="345" y="495" width="45" height="15" fill="#D63A29" rx="2"/>
+    <rect x="345" y="525" width="45" height="15" fill="#D63A29" rx="2"/>
+    <rect x="345" y="555" width="45" height="15" fill="#D63A29" rx="2"/>
+    <rect x="345" y="585" width="45" height="15" fill="#D63A29" rx="2"/>
+
+    <polygon points="425,415 510,415 510,640 425,640" fill="url(#b2_wall)"/>
+    <polygon points="510,415 520,425 520,640 510,640" fill="#B34A0E"/>
+    <rect x="440" y="440" width="55" height="14" fill="#FFFFFF" rx="2"/>
+    <rect x="440" y="468" width="55" height="14" fill="#FFFFFF" rx="2"/>
+    <rect x="440" y="496" width="55" height="14" fill="#FFFFFF" rx="2"/>
+    <rect x="440" y="524" width="55" height="14" fill="#FFFFFF" rx="2"/>
+    <rect x="440" y="552" width="55" height="14" fill="#FFFFFF" rx="2"/>
+    <rect x="440" y="580" width="55" height="14" fill="#FFFFFF" rx="2"/>
+
+    <polygon points="520,450 595,435 595,640 520,640" fill="url(#b3_wall)"/>
+    <polygon points="595,435 605,445 605,640 595,640" fill="#D49800"/>
+    <rect x="540" y="475" width="40" height="20" fill="#FFFFFF" rx="2" opacity="0.9"/>
+    <rect x="540" y="510" width="40" height="20" fill="#FFFFFF" rx="2" opacity="0.9"/>
+    <rect x="540" y="545" width="40" height="20" fill="#FFFFFF" rx="2" opacity="0.9"/>
+    <rect x="540" y="580" width="40" height="20" fill="#FFFFFF" rx="2" opacity="0.9"/>
+
+    <polygon points="615,480 705,480 705,640 615,640" fill="url(#b4_wall)"/>
+    <polygon points="705,480 715,490 715,640 705,640" fill="#522212"/>
+    <rect x="635" y="505" width="52" height="14" fill="#FFFFFF" rx="2"/>
+    <rect x="635" y="530" width="52" height="14" fill="#FFFFFF" rx="2"/>
+    <rect x="635" y="555" width="52" height="14" fill="#FFFFFF" rx="2"/>
+    <rect x="635" y="580" width="52" height="14" fill="#FFFFFF" rx="2"/>
+
+    <!-- Highway -->
+    <path d="M 170 740 Q 500 645 830 735 L 835 805 Q 500 735 165 815 Z" fill="url(#roadGrad)"/>
+    <path d="M 170 740 Q 500 645 830 735" stroke="#454A4F" stroke-width="4" fill="none"/>
+    <path d="M 165 815 Q 500 735 835 805" stroke="#000000" stroke-width="5" fill="none"/>
+    <path d="M 210 775 Q 500 690 790 770" stroke="#FFFFFF" stroke-width="9" 
+          stroke-dasharray="38 28" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Registration Number (RC: 1300720) -->
+  <text x="960" y="740" font-family="'Inter', 'Arial Bold', sans-serif" font-size="28" font-weight="900" fill="#0A0A0A" text-anchor="end" letter-spacing="2">RC: 1300720</text>
+
+  <!-- Typography: MUKAIBURGER -->
+  <g transform="translate(600, 860)">
+    <!-- Shadow -->
+    <text x="4" y="4" font-family="'Rockwell', 'Georgia', 'Clarendon', serif" font-size="112" font-weight="900" fill="#3D120B" text-anchor="middle" letter-spacing="4">MUKAIBURGER</text>
+    <!-- Main Text in Rich Burgundy Red with stroke -->
+    <text x="0" y="0" font-family="'Rockwell', 'Georgia', 'Clarendon', serif" font-size="112" font-weight="900" fill="#9C2718" stroke="#3D120B" stroke-width="2" text-anchor="middle" letter-spacing="4">MUKAIBURGER</text>
+  </g>
+
+  <!-- Typography: ENGINEERING NIG. LTD -->
+  <text x="600" y="955" font-family="'Rockwell', 'Georgia', 'Clarendon', serif" font-size="52" font-weight="800" fill="#0A0A0A" text-anchor="middle" letter-spacing="6">ENGINEERING NIG. LTD</text>
+
+  <!-- Red Callout Ribbon Banner: ...Sound Quality, Sound Engineering -->
+  <g transform="translate(360, 1020)">
+    <rect x="0" y="0" width="760" height="90" fill="url(#bannerRed)" rx="6"/>
+    <text x="380" y="60" font-family="'Brush Script MT', 'Pacifico', 'Dancing Script', cursive, sans-serif" 
+          font-size="46" font-weight="bold" font-style="italic" fill="#FFFFFF" text-anchor="middle">...Sound Quality, Sound Engineering</text>
+  </g>
+</svg>

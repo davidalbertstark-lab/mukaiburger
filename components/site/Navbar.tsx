@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -128,14 +129,16 @@ export function Navbar() {
           </button>
 
           {/* Center: Logo + animated brand name */}
-          <Link href="/" className="flex items-center gap-0">
-            <div
-              className={[
-                "flex h-9 w-9 items-center justify-center rounded-md font-corporate text-sm font-bold transition-colors flex-shrink-0",
-                transparent ? "bg-ember text-white" : "bg-ink text-white",
-              ].join(" ")}
-            >
-              M
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="relative h-10 w-10 flex-shrink-0">
+              <Image
+                src="/brand/logo-emblem.png"
+                alt="Mukaiburger Logo"
+                width={40}
+                height={40}
+                className="h-full w-full object-contain"
+                priority
+              />
             </div>
             <div className="overflow-hidden">
               <motion.div

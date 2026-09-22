@@ -134,7 +134,7 @@ export function LegacyStrength() {
           <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <h2
               className="font-display font-medium leading-[1.06] text-ink"
-              style={{ fontSize: "clamp(1.9rem, 4.5vw, 3.5rem)" }}
+              style={{ fontSize: "clamp(1.9rem,4.5vw,3.5rem)" }}
             >
               Experience measured in<br className="hidden sm:block" /> capability and delivery.
             </h2>

@@ -32,7 +32,7 @@ function LogoNSE() {
   return (
     <svg viewBox="0 0 110 44" className="h-8 w-auto" aria-label="NSE">
       <rect x="2" y="2" width="106" height="40" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ink/30" />
-      <polygon points="55,6 66,22 55,38 44,22" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ember/70"/>
+      <polygon points="55,6 66,22 55,38 44,22" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ember/70" />
       <text x="55" y="26" textAnchor="middle" fontSize="9" fontWeight="700" fill="currentColor" className="text-ink">NSE</text>
     </svg>
   );

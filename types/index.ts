@@ -1,9 +1,13 @@
 export interface Project {
+  slug: string;
   title: string;
   location: string;
   category: string;
+  pillar: "infrastructure" | "luxury" | "turnkey";
   year: string;
   image: string;
+  client?: string;
+  scope?: string;
   description?: string;
 }
 

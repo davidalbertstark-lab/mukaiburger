@@ -21,10 +21,10 @@ export function Hero() {
   const trustY = useTransform(scrollYProgress, [0.15, 0.35], [16, 0]);
 
   const trustItems = [
-    { label: "Founded", val: "2018" },
+    { label: "Founded", val: "2015" },
     { label: "RC Number", val: "1300720" },
-    { label: "Coverage", val: "6+ States" },
-    { label: "Registered", val: "CAC" },
+    { label: "Coverage", val: "Nationwide" },
+    { label: "Registered", val: "CAC / COREN" },
   ];
 
   return (
@@ -76,7 +76,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-corporate text-[10px] tracking-[0.3em] text-white/55 sm:text-[11px] sm:tracking-[0.32em]"
           >
-            <span className="text-ember">●</span>&nbsp; EST. 2018 · ENGINEERING ·
+            <span className="text-ember">●</span>&nbsp; EST. 2015 · ENGINEERING ·
             CONSTRUCTION · INFRASTRUCTURE
           </motion.p>
 

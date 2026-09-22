@@ -32,25 +32,36 @@ export default function ContactPage() {
           <Reveal className="lg:col-span-5">
             <div className="space-y-10">
               {[
-                ["OFFICE", ["Plot 1, Engineering Way", "Abuja, FCT, Nigeria"]],
-                ["GENERAL ENQUIRIES", ["mukaiburger@gmail.com"]],
-                [
-                  "PROJECTS DESK",
-                  ["projects@mukaiburger.com", "+234 (0) 803 244 7065"],
-                ],
-                ["HOURS", ["Mon–Fri  ·  08:00 – 18:00 WAT"]],
+                ["CORPORATE HEADQUARTERS", ["Lagos State, Nigeria", "Active site operations across Ikoyi, Lekki & Lagos Island"]],
+                ["REGIONAL OPERATIONS", ["Abuja, FCT · Ondo State · Cross River · Plateau"]],
+                ["DIRECT ENQUIRIES", ["mukaiburger@gmail.com", "+234 (0) 803 244 7065"]],
+                ["CORPORATE BANKING", ["Polaris Bank Plc", "Acct: 4091245615 · RC 1300720"]],
+                ["OPERATING HOURS", ["Mon–Fri  ·  08:00 – 18:00 WAT"]],
               ].map(([k, v]) => (
                 <div key={k as string}>
                   <p className="font-corporate text-[10px] tracking-[0.3em] text-ember">
                     {k}
                   </p>
-                  <div className="mt-3 space-y-1 text-base text-ink">
+                  <div className="mt-2 space-y-1 text-sm text-ink">
                     {(v as string[]).map((line) => (
                       <p key={line}>{line}</p>
                     ))}
                   </div>
                 </div>
               ))}
+
+              <div className="pt-4 border-t border-border">
+                <a
+                  href="/docs/Mukaiburger_Corporate_Company_Profile_2026.pdf"
+                  download
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-5 py-2.5 text-xs font-medium text-ink transition hover:border-ember hover:text-ember"
+                >
+                  <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 text-ember">
+                    <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                  Download Corporate Profile (PDF)
+                </a>
+              </div>
             </div>
           </Reveal>
 

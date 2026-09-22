@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
@@ -7,8 +8,14 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-md bg-ember font-corporate text-sm font-bold">
-                M
+              <div className="relative h-10 w-10 flex-shrink-0">
+                <Image
+                  src="/brand/logo-emblem.png"
+                  alt="Mukaiburger Logo"
+                  width={40}
+                  height={40}
+                  className="h-full w-full object-contain"
+                />
               </div>
               <div className="leading-none">
                 <p className="font-corporate text-sm font-semibold">
@@ -19,9 +26,11 @@ export function Footer() {
                 </p>
               </div>
             </div>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-white/60">
-              An engineering and construction company delivering buildings,
-              civil works and infrastructure with precision and accountability.
+            <p className="mt-3 font-corporate text-[11px] italic tracking-wide text-ember">
+              &quot;...Sound Quality, Sound Engineering&quot;
+            </p>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60">
+              Indigenous civil engineering, heavy infrastructure, deep foundation piling, and ultra-luxury building construction firm. CAC RC 1300720 (Incorporated 2015).
             </p>
           </div>
 
