@@ -103,7 +103,7 @@ export const VERIFIED_PROJECTS: Project[] = [
     category: "Ultra-Luxury Residential",
     pillar: "luxury",
     year: "Active Delivery",
-    image: "/projects/banana-island-tower-facade.jpg",
+    image: "/projects/the-woodlands-banana-island-master.jpg",
     client: "Joe Faraday Limited",
     scope: "Multi-storey bespoke luxury residential apartments, subterranean basements, infinity swimming pool deck, and elite architectural finishes.",
     description: "Architectural masterpiece combining ultra-luxury aesthetic design with rigorous structural engineering.",
