@@ -63,11 +63,11 @@ export function WhoWeAre() {
           <Reveal delay={0.1} className="hidden lg:block">
             <div className="relative h-full min-h-[500px] overflow-hidden rounded-2xl">
               <Image
-                src={IMGS.hero}
-                alt="Mukaiburger construction operations"
+                src={IMGS.who_we_are}
+                alt="Mukaiburger engineering team on site"
                 fill
                 className="object-cover"
-                style={{ objectPosition: "60% center" }}
+                style={{ objectPosition: "center center" }}
               />
               <div className="absolute inset-0 bg-gradient-to-br from-ink/20 via-transparent to-ink/60" />
               <div className="absolute bottom-6 left-6 right-6">
