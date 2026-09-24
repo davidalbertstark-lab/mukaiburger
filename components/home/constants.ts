@@ -67,8 +67,8 @@ export const VERIFIED_PROJECTS: Project[] = [
     year: "2019",
     image: "/projects/cbn-centre-enugu.jpg",
     client: "Central Bank of Nigeria (CSR Project)",
-    scope: "133-room world-class postgraduate hostel, multi-storey accommodation, auditoriums, retaining walls, and perimeter civil drainage.",
-    description: "Landmark educational and residential development commissioned to elevate postgraduate research infrastructure.",
+    scope: "Postgraduate complex facilities, faculty building substructures, heavy raft foundation rebar matrices, and regional urban storm drainage retaining walls across Uwani and Ogui districts.",
+    description: "Landmark educational and research infrastructure at UNEC, engineered with precision optical theodolite leveling, deep reinforced concrete retaining walls, and monolithic foundation rafts.",
   },
   {
     slug: "jos-stadium-regional-infrastructure",
