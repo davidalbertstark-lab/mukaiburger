@@ -3,84 +3,112 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-ink text-white">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+    <footer className="relative border-t border-white/[0.08] bg-black text-white overflow-hidden">
+      <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="grid gap-12 md:grid-cols-12">
+          {/* Brand Col */}
           <div className="md:col-span-5">
-            <div className="flex items-center gap-3">
-              <div className="relative h-10 w-10 flex-shrink-0">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative h-9 w-9 flex-shrink-0 transition-transform group-hover:scale-105">
                 <Image
                   src="/brand/logo-emblem.png"
                   alt="Mukaiburger Logo"
-                  width={40}
-                  height={40}
+                  width={36}
+                  height={36}
                   className="h-full w-full object-contain"
                 />
               </div>
               <div className="leading-none">
-                <p className="font-corporate text-sm font-semibold">
+                <p className="font-display text-base font-bold tracking-tight text-white group-hover:text-amber-400 transition-colors">
                   MUKAIBURGER
                 </p>
-                <p className="mt-1 font-corporate text-[10px] tracking-[0.22em] text-white/60">
+                <p className="mt-1 font-corporate text-[9px] tracking-[0.24em] text-zinc-400">
                   ENGINEERING NIGERIA LIMITED
                 </p>
               </div>
-            </div>
-            <p className="mt-3 font-corporate text-[11px] italic tracking-wide text-ember">
+            </Link>
+
+            <p className="mt-4 font-corporate text-[10.5px] italic tracking-wide text-ember">
               &quot;...Sound Quality, Sound Engineering&quot;
             </p>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/60">
-              Indigenous civil engineering, heavy infrastructure, deep foundation piling, and ultra-luxury building construction firm. CAC RC 1300720 (Incorporated 2015).
+            <p className="mt-4 max-w-md text-xs sm:text-sm leading-relaxed text-zinc-400">
+              Indigenous civil engineering, heavy infrastructure, deep foundation piling, and ultra-luxury high-rise construction firm. CAC RC 1300720 (Incorporated 2015 · COREN Registered).
             </p>
           </div>
 
+          {/* Navigation Links */}
           <div className="md:col-span-2">
-            <p className="font-corporate text-[10px] tracking-[0.3em] text-white/40">
+            <p className="font-corporate text-[9px] font-semibold tracking-[0.25em] text-zinc-500 uppercase">
               EXPLORE
             </p>
-            <ul className="mt-4 space-y-3 text-sm">
-              {["about", "services", "projects", "contact"].map((slug) => (
-                <li key={slug}>
+            <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
+              {[
+                { label: "Home", href: "/" },
+                { label: "About", href: "/about" },
+                { label: "Services", href: "/services" },
+                { label: "Projects Archive", href: "/projects" },
+                { label: "Contact Us", href: "/contact" },
+              ].map((item) => (
+                <li key={item.href}>
                   <Link
-                    href={`/${slug}`}
-                    className="capitalize text-white/80 hover:text-ember"
+                    href={item.href}
+                    className="text-zinc-400 hover:text-white transition-colors"
                   >
-                    {slug.charAt(0).toUpperCase() + slug.slice(1)}
+                    {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Core Disciplines */}
           <div className="md:col-span-2">
-            <p className="font-corporate text-[10px] tracking-[0.3em] text-white/40">
-              SECTORS
+            <p className="font-corporate text-[9px] font-semibold tracking-[0.25em] text-zinc-500 uppercase">
+              DISCIPLINES
             </p>
-            <ul className="mt-4 space-y-3 text-sm text-white/80">
-              {["Building", "Civil Engineering", "Renovation", "Project Management"].map((s) => (
-                <li key={s}>{s}</li>
-              ))}
+            <ul className="mt-4 space-y-2.5 text-xs sm:text-sm text-zinc-400">
+              <li>Civil &amp; Structural</li>
+              <li>Highways &amp; Bridges</li>
+              <li>Subterranean Piling</li>
+              <li>Turnkey Direction</li>
             </ul>
           </div>
 
+          {/* Contact & Hotlines */}
           <div className="md:col-span-3">
-            <p className="font-corporate text-[10px] tracking-[0.3em] text-white/40">
-              CONTACT
+            <p className="font-corporate text-[9px] font-semibold tracking-[0.25em] text-zinc-500 uppercase">
+              HEADQUARTERS
             </p>
-            <ul className="mt-4 space-y-3 text-sm text-white/80">
-              <li>Abuja, Nigeria</li>
-              <li>mukaiburger@gmail.com</li>
-              <li>+234 (0) 803 244 7065</li>
+            <ul className="mt-4 space-y-2.5 text-xs sm:text-sm text-zinc-400">
+              <li className="text-white font-medium">Abuja &amp; Lagos, Nigeria</li>
+              <li>
+                <a href="mailto:mukaiburger@gmail.com" className="hover:text-ember transition-colors">
+                  mukaiburger@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+2348032447065" className="hover:text-ember transition-colors">
+                  +234 803 244 7065
+                </a>
+              </li>
+              <li className="pt-1">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 font-corporate text-[9px] text-zinc-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  RC 1300720 ACTIVE
+                </span>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 md:flex-row md:items-center">
+        {/* Bottom Sub-bar */}
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/[0.08] pt-8 text-xs text-zinc-500 md:flex-row md:items-center">
           <p>
-            © {new Date().getFullYear()} Mukaiburger Engineering Nigeria
-            Limited. All rights reserved.
+            © {new Date().getFullYear()} Mukaiburger Engineering Nigeria Limited. All rights reserved.
           </p>
-          <p className="font-corporate tracking-[0.22em]">BUILT ON PRECISION</p>
+          <p className="font-corporate text-[9px] tracking-[0.22em] text-zinc-400">
+            ENGINEERED WITH UNCOMPROMISING RIGOR
+          </p>
         </div>
       </div>
     </footer>

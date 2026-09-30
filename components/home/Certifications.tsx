@@ -4,112 +4,86 @@ import { Reveal } from "@/components/site/Reveal";
 
 function LogoCAC() {
   return (
-    <svg viewBox="0 0 120 44" className="h-8 w-auto" aria-label="CAC">
-      <rect x="2" y="2" width="116" height="40" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ink/30" />
-      <text x="60" y="17" textAnchor="middle" fontSize="10" fontWeight="700" fontFamily="serif" fill="currentColor" className="text-ink">CAC</text>
-      <text x="60" y="30" textAnchor="middle" fontSize="6" fontFamily="sans-serif" fill="currentColor" className="text-ink/50">CORPORATE AFFAIRS</text>
-      <text x="60" y="38" textAnchor="middle" fontSize="6" fontFamily="sans-serif" fill="currentColor" className="text-ink/50">COMMISSION · NIGERIA</text>
-    </svg>
+    <div className="flex flex-col items-center justify-center text-center">
+      <span className="font-display text-xs font-extrabold tracking-widest text-white">CAC</span>
+      <span className="font-corporate text-[7px] tracking-wider text-zinc-400">RC 1300720 · INC. 2015</span>
+    </div>
   );
 }
 
 function LogoCOREN() {
   return (
-    <svg viewBox="0 0 130 44" className="h-8 w-auto" aria-label="COREN">
-      <rect x="2" y="2" width="126" height="40" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ink/30" />
-      <g transform="translate(14,22)">
-        <circle cx="0" cy="0" r="7" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ember/70" />
-        <circle cx="0" cy="0" r="3" fill="currentColor" className="text-ember/70" />
-      </g>
-      <text x="74" y="17" textAnchor="middle" fontSize="10" fontWeight="700" fontFamily="serif" fill="currentColor" className="text-ink">COREN</text>
-      <text x="74" y="29" textAnchor="middle" fontSize="5.5" fontFamily="sans-serif" fill="currentColor" className="text-ink/50">COUNCIL FOR REGULATION</text>
-      <text x="74" y="37" textAnchor="middle" fontSize="5.5" fontFamily="sans-serif" fill="currentColor" className="text-ink/50">OF ENGINEERING IN NIGERIA</text>
-    </svg>
+    <div className="flex flex-col items-center justify-center text-center">
+      <span className="font-display text-xs font-extrabold tracking-widest text-white">COREN</span>
+      <span className="font-corporate text-[7px] tracking-wider text-amber-400">ENGINEERING REGULATION</span>
+    </div>
   );
 }
 
 function LogoNSE() {
   return (
-    <svg viewBox="0 0 110 44" className="h-8 w-auto" aria-label="NSE">
-      <rect x="2" y="2" width="106" height="40" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ink/30" />
-      <polygon points="55,6 66,22 55,38 44,22" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ember/70" />
-      <text x="55" y="26" textAnchor="middle" fontSize="9" fontWeight="700" fill="currentColor" className="text-ink">NSE</text>
-    </svg>
+    <div className="flex flex-col items-center justify-center text-center">
+      <span className="font-display text-xs font-extrabold tracking-widest text-white">NSE</span>
+      <span className="font-corporate text-[7px] tracking-wider text-zinc-400">NIGERIAN SOCIETY OF ENGINEERS</span>
+    </div>
   );
 }
 
 function LogoNIQS() {
   return (
-    <svg viewBox="0 0 120 44" className="h-8 w-auto" aria-label="NIQS">
-      <rect x="2" y="2" width="116" height="40" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ink/30" />
-      <g transform="translate(16,22)" stroke="currentColor" strokeWidth="1.3" className="text-ember/70" fill="none">
-        <line x1="0" y1="-8" x2="0" y2="8" />
-        <line x1="-6" y1="-8" x2="6" y2="-8" />
-        <circle cx="-6" cy="-4" r="3" />
-        <circle cx="6" cy="-6" r="3" />
-      </g>
-      <text x="66" y="17" textAnchor="middle" fontSize="10" fontWeight="700" fontFamily="serif" fill="currentColor" className="text-ink">NIQS</text>
-      <text x="66" y="29" textAnchor="middle" fontSize="5.5" fontFamily="sans-serif" fill="currentColor" className="text-ink/50">NIGERIAN INSTITUTE OF</text>
-      <text x="66" y="37" textAnchor="middle" fontSize="5.5" fontFamily="sans-serif" fill="currentColor" className="text-ink/50">QUANTITY SURVEYORS</text>
-    </svg>
+    <div className="flex flex-col items-center justify-center text-center">
+      <span className="font-display text-xs font-extrabold tracking-widest text-white">NIQS</span>
+      <span className="font-corporate text-[7px] tracking-wider text-zinc-400">QUANTITY SURVEYORS</span>
+    </div>
   );
 }
 
-function LogoARCON() {
+function LogoFMWH() {
   return (
-    <svg viewBox="0 0 130 44" className="h-8 w-auto" aria-label="ARCON">
-      <rect x="2" y="2" width="126" height="40" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ink/30" />
-      <g transform="translate(16,22)" stroke="currentColor" strokeWidth="1.5" className="text-ember/70" fill="none">
-        <path d="M-7 9 L-7 0 Q-7 -9 0 -9 Q7 -9 7 0 L7 9" />
-        <line x1="-10" y1="9" x2="10" y2="9" />
-      </g>
-      <text x="74" y="17" textAnchor="middle" fontSize="10" fontWeight="700" fontFamily="serif" fill="currentColor" className="text-ink">ARCON</text>
-      <text x="74" y="29" textAnchor="middle" fontSize="5.5" fontFamily="sans-serif" fill="currentColor" className="text-ink/50">ARCHITECTS REGISTRATION</text>
-      <text x="74" y="37" textAnchor="middle" fontSize="5.5" fontFamily="sans-serif" fill="currentColor" className="text-ink/50">COUNCIL OF NIGERIA</text>
-    </svg>
+    <div className="flex flex-col items-center justify-center text-center">
+      <span className="font-display text-xs font-extrabold tracking-widest text-white">FMWH</span>
+      <span className="font-corporate text-[7px] tracking-wider text-amber-400">FEDERAL HIGHWAYS &amp; WORKS</span>
+    </div>
   );
 }
 
 function LogoNIA() {
   return (
-    <svg viewBox="0 0 100 44" className="h-8 w-auto" aria-label="NIA">
-      <rect x="2" y="2" width="96" height="40" rx="6" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ink/30" />
-      <text x="50" y="19" textAnchor="middle" fontSize="12" fontWeight="700" fontFamily="serif" fill="currentColor" className="text-ink">NIA</text>
-      <text x="50" y="31" textAnchor="middle" fontSize="5.5" fontFamily="sans-serif" fill="currentColor" className="text-ink/50">NIGERIAN INSTITUTE</text>
-      <text x="50" y="39" textAnchor="middle" fontSize="5.5" fontFamily="sans-serif" fill="currentColor" className="text-ink/50">OF ARCHITECTS</text>
-    </svg>
+    <div className="flex flex-col items-center justify-center text-center">
+      <span className="font-display text-xs font-extrabold tracking-widest text-white">NIA / ARCON</span>
+      <span className="font-corporate text-[7px] tracking-wider text-zinc-400">ARCHITECTURAL STANDARDS</span>
+    </div>
   );
 }
 
 const CERT_LOGOS = [
-  { id: "cac", el: <LogoCAC />, full: "Corporate Affairs Commission" },
-  { id: "coren", el: <LogoCOREN />, full: "Council for Regulation of Engineering" },
-  { id: "nse", el: <LogoNSE />, full: "Nigerian Society of Engineers" },
-  { id: "niqs", el: <LogoNIQS />, full: "Nigerian Inst. of Quantity Surveyors" },
-  { id: "arcon", el: <LogoARCON />, full: "Architects Registration Council" },
-  { id: "nia", el: <LogoNIA />, full: "Nigerian Institute of Architects" },
+  { id: "cac", el: <LogoCAC /> },
+  { id: "coren", el: <LogoCOREN /> },
+  { id: "nse", el: <LogoNSE /> },
+  { id: "fmwh", el: <LogoFMWH /> },
+  { id: "niqs", el: <LogoNIQS /> },
+  { id: "nia", el: <LogoNIA /> },
 ];
 
-function CertRow({ direction }: { direction: "left" | "right" }) {
-  const items = direction === "right" ? [...CERT_LOGOS].reverse() : CERT_LOGOS;
-  const tripled = [...items, ...items, ...items];
+function CertRow() {
+  const tripled = [...CERT_LOGOS, ...CERT_LOGOS, ...CERT_LOGOS];
   return (
-    <div className="overflow-hidden py-2">
+    <div className="relative overflow-hidden py-4">
+      {/* Edge Gradients */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
+
       <style>{`
-        @keyframes certLeft  { from{transform:translateX(0)} to{transform:translateX(-33.33%)} }
-        @keyframes certRight { from{transform:translateX(-33.33%)} to{transform:translateX(0)} }
-        .cert-left  { animation: certLeft  30s linear infinite; }
-        .cert-right { animation: certRight 30s linear infinite; }
+        @keyframes certLeft { from{transform:translateX(0)} to{transform:translateX(-33.33%)} }
+        .cert-ticker { animation: certLeft 32s linear infinite; }
+        .cert-ticker:hover { animation-play-state: paused; }
       `}</style>
-      <div
-        className={`flex gap-4 ${direction === "left" ? "cert-left" : "cert-right"}`}
-        style={{ width: "max-content" }}
-      >
+      <div className="cert-ticker flex gap-4" style={{ width: "max-content" }}>
         {tripled.map((c, i) => (
           <div
             key={`${c.id}-${i}`}
-            className="flex-shrink-0 flex items-center justify-center rounded-xl border border-border bg-background px-5 py-3 transition-all hover:border-ember/30 hover:shadow-sm"
-            style={{ minWidth: "160px" }}
+            className="flex-shrink-0 flex items-center justify-center rounded-2xl border border-white/10 bg-zinc-950/80 px-6 py-4.5 backdrop-blur-2xl transition-all duration-300 hover:border-white/25 hover:bg-zinc-900/60 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+            style={{ minWidth: "190px" }}
           >
             {c.el}
           </div>
@@ -121,34 +95,37 @@ function CertRow({ direction }: { direction: "left" | "right" }) {
 
 export function Certifications() {
   return (
-    <section className="bg-secondary py-20 md:py-28 overflow-hidden">
-      <div className="mx-auto max-w-7xl px-5 lg:px-10">
+    <section className="relative bg-black py-24 md:py-32 text-white overflow-hidden border-b border-white/[0.08]">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-10">
         <Reveal>
-          <p className="font-corporate text-[10px] tracking-[0.3em] text-ember">
-            CERTIFICATIONS & AFFILIATIONS
-          </p>
-          <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <h2
-              className="font-display font-medium leading-[1.06] text-ink"
-              style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.75rem)" }}
-            >
-              Built on recognised standards<br className="hidden sm:block" /> and professional relationships.
-            </h2>
-            <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Regulatory compliance and professional standards guide every project we deliver.
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1 text-[10px] font-semibold tracking-[0.25em] text-ember">
+                <span>●</span> STATUTORY CLEARANCES &amp; AFFILIATIONS
+              </div>
+              <h2 className="mt-4 font-display text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[1.06] tracking-tight text-white">
+                Built on recognised standards.{" "}
+                <br />
+                <span className="apple-text-gradient">Verified regulatory trust.</span>
+              </h2>
+            </div>
+            <p className="max-w-xs text-sm leading-relaxed text-zinc-400">
+              Rigorous compliance and certified professional standing underpinning every contract across Nigeria.
             </p>
           </div>
         </Reveal>
       </div>
-      <div className="mt-10 space-y-3">
-        <CertRow direction="left" />
+
+      <div className="mt-12">
+        <CertRow />
       </div>
-      <div className="mx-auto mt-10 max-w-7xl px-5 lg:px-10">
+
+      <div className="mx-auto mt-8 max-w-7xl px-5 lg:px-10">
         <Reveal>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-            <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-ember" />
-            <p className="font-corporate text-[9px] tracking-[0.22em] text-ink/35">
-              MUKAIBURGER ENGINEERING NIGERIA LIMITED · RC 1300720 · CAC REGISTERED · ALL MEMBERSHIPS CURRENT
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-full border border-white/[0.06] bg-white/[0.02] px-5 py-2.5 backdrop-blur-md">
+            <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400 animate-pulse" />
+            <p className="font-corporate text-[9px] font-medium tracking-[0.22em] text-zinc-400">
+              MUKAIBURGER ENGINEERING NIGERIA LIMITED · CAC RC 1300720 · COREN CERTIFIED · ALL STATUTORY CLEARANCES CURRENT
             </p>
           </div>
         </Reveal>

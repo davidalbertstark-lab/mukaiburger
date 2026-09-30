@@ -29,7 +29,7 @@ export const VERIFIED_PROJECTS: Project[] = [
     category: "Highway & Bridge Engineering",
     pillar: "infrastructure",
     year: "2020 – 2021",
-    image: "/projects/calabar-highway-culvert.jpg",
+    image: "/projects/calabar-itu-excavator-culvert.jpg",
     client: "Federal Ministry of Works",
     scope: "28.6km dual carriage highway, swamp subgrade stabilization, cut-and-fill, and 4 major reinforced concrete bridges including Atan & Okpokong.",
     description: "Multi-billion Naira federal highway dualization delivering heavy civil excavation, swamp reclamation, and major river crossing bridge structures.",

@@ -6,50 +6,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-function IconHome() {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-4 w-4">
-      <path d="M3 9.5L10 3l7 6.5V17a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" />
-      <path d="M7.5 18V13h5v5" />
-    </svg>
-  );
-}
-function IconAbout() {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-4 w-4">
-      <circle cx="10" cy="7" r="3" />
-      <path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" />
-    </svg>
-  );
-}
-function IconServices() {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-4 w-4">
-      <rect x="2" y="2" width="7" height="7" rx="1" />
-      <rect x="11" y="2" width="7" height="7" rx="1" />
-      <rect x="2" y="11" width="7" height="7" rx="1" />
-      <rect x="11" y="11" width="7" height="7" rx="1" />
-    </svg>
-  );
-}
-function IconProjects() {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-4 w-4">
-      <path d="M2 15L7 5l4 6 3-3 4 7H2z" />
-    </svg>
-  );
-}
-function IconContact() {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.4" className="h-4 w-4">
-      <rect x="2" y="4" width="16" height="13" rx="1.5" />
-      <path d="M2 7l8 5 8-5" />
-    </svg>
-  );
-}
-
-const NAV_ICONS = [IconHome, IconAbout, IconServices, IconProjects, IconContact];
-
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -64,7 +20,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -81,215 +37,187 @@ export function Navbar() {
     };
   }, [open]);
 
-  const isHome = pathname === "/";
-  // Transparent only on home, not scrolled, and sidebar closed
-  const transparent = isHome && !scrolled && !open;
-
   return (
     <>
-      {/* ── TOP BAR ── */}
-      <header
-        className={[
-          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-          transparent
-            ? "bg-transparent"
-            : "bg-white/85 backdrop-blur-xl shadow-[0_1px_0_0_rgba(0,0,0,0.06)]",
-        ].join(" ")}
-      >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
-
-          {/* Left: Hamburger — ember square, morphs to X */}
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-            className="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-ember transition-colors hover:bg-ember-deep"
-          >
-            <span className="sr-only">{open ? "Close" : "Menu"}</span>
-            <span aria-hidden className="flex flex-col gap-[5px]">
-              <motion.span
-                animate={open ? { rotate: 45, y: 7, width: "20px" } : { rotate: 0, y: 0, width: "20px" }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="block h-[1.5px] bg-white origin-center"
-                style={{ width: 20 }}
-              />
-              <motion.span
-                animate={open ? { opacity: 0, x: -6 } : { opacity: 1, x: 0 }}
-                transition={{ duration: 0.2 }}
-                className="block h-[1.5px] bg-white"
-                style={{ width: 14 }}
-              />
-              <motion.span
-                animate={open ? { rotate: -45, y: -7, width: "20px" } : { rotate: 0, y: 0, width: "20px" }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="block h-[1.5px] bg-white origin-center"
-                style={{ width: 20 }}
-              />
-            </span>
-          </button>
-
-          {/* Center: Logo + animated brand name */}
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="relative h-10 w-10 flex-shrink-0">
+      {/* ── FLOATING APPLE DOCK ── */}
+      <header className="fixed inset-x-0 top-3 z-50 flex justify-center px-4 sm:top-5 sm:px-6 pointer-events-none">
+        <div
+          className={[
+            "pointer-events-auto flex w-full max-w-5xl items-center justify-between transition-all duration-500",
+            "rounded-full px-4 py-2 sm:px-5 sm:py-2.5",
+            scrolled
+              ? "bg-zinc-950/75 backdrop-blur-2xl border border-white/10 shadow-[0_16px_40px_-10px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.12)]"
+              : "bg-black/60 backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_30px_rgba(0,0,0,0.5)]",
+          ].join(" ")}
+        >
+          {/* Brand Logo & Title */}
+          <Link href="/" className="group flex items-center gap-2.5 sm:gap-3">
+            <div className="relative h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/brand/logo-emblem.png"
                 alt="Mukaiburger Logo"
-                width={40}
-                height={40}
+                width={36}
+                height={36}
                 className="h-full w-full object-contain"
                 priority
               />
             </div>
-            <div className="overflow-hidden">
-              <motion.div
-                initial={{ x: -44, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="pl-3 flex flex-col leading-none"
-              >
-                <span
-                  className={[
-                    "transition-colors duration-500 font-display text-[22px] font-bold tracking-[-0.01em]",
-                    transparent
-                      ? "text-white [text-shadow:2px_2px_0px_rgba(0,0,0,0.3),0_4px_20px_rgba(0,0,0,0.5)]"
-                      : "text-ink [text-shadow:1px_1px_0px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)]",
-                  ].join(" ")}
-                >
-                  MUKAIBURGER
-                </span>
-                <span
-                  className={[
-                    "font-corporate text-[9px] tracking-[0.22em] transition-colors duration-500",
-                    transparent ? "text-white/65" : "text-muted-foreground",
-                  ].join(" ")}
-                >
-                  ENGINEERING NIGERIA LIMITED
-                </span>
-              </motion.div>
+            <div className="flex flex-col leading-tight">
+              <span className="font-display text-[15px] font-bold tracking-tight text-white transition-colors group-hover:text-ember sm:text-[17px]">
+                MUKAIBURGER
+              </span>
+              <span className="hidden font-corporate text-[8.5px] tracking-[0.24em] text-zinc-400 sm:block">
+                ENGINEERING NIGERIA LIMITED
+              </span>
             </div>
           </Link>
 
-          {/* Right: quiet links (desktop only) */}
-          <nav className="hidden items-center gap-8 md:flex">
-            <Link
-              href="/projects"
-              className={[
-                "font-corporate text-[11px] font-medium tracking-[0.22em] transition-colors",
-                transparent ? "text-white/85 hover:text-white" : "text-ink/70 hover:text-ember",
-              ].join(" ")}
-            >
-              PROJECTS
-            </Link>
-            <Link
-              href="/services"
-              className={[
-                "font-corporate text-[11px] font-medium tracking-[0.22em] transition-colors",
-                transparent ? "text-white/85 hover:text-white" : "text-ink/70 hover:text-ember",
-              ].join(" ")}
-            >
-              SECTORS
-            </Link>
+          {/* Center: Desktop Nav Pills */}
+          <nav className="hidden items-center gap-1 md:flex">
+            {NAV_LINKS.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={[
+                    "relative px-3.5 py-1.5 text-[12px] font-medium tracking-wide transition-all duration-200 rounded-full",
+                    active
+                      ? "text-white bg-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)]"
+                      : "text-zinc-400 hover:text-white hover:bg-white/[0.06]",
+                  ].join(" ")}
+                >
+                  {link.label}
+                  {active && (
+                    <motion.span
+                      layoutId="active-pill"
+                      className="absolute bottom-0 left-1/2 h-[2px] w-3 -translate-x-1/2 rounded-full bg-ember"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
-          {/* Mobile right placeholder for symmetry */}
-          <div className="h-11 w-11 md:hidden" aria-hidden />
+          {/* Right Action: Partner / Contact CTA Pill */}
+          <div className="flex items-center gap-2">
+            <Link
+              href="/contact"
+              className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-black transition-all duration-300 hover:bg-zinc-200 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] active:scale-95"
+            >
+              Partner With Us
+              <svg viewBox="0 0 16 16" fill="currentColor" className="h-3 w-3">
+                <path fillRule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" clipRule="evenodd" />
+              </svg>
+            </Link>
+
+            {/* Apple Hamburger button (Mobile) */}
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((v) => !v)}
+              className="relative flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/15 md:hidden"
+            >
+              <span className="sr-only">{open ? "Close" : "Menu"}</span>
+              <span aria-hidden className="flex flex-col gap-1">
+                <motion.span
+                  animate={open ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="block h-[1.5px] w-4 bg-white origin-center"
+                />
+                <motion.span
+                  animate={open ? { opacity: 0 } : { opacity: 1 }}
+                  transition={{ duration: 0.15 }}
+                  className="block h-[1.5px] w-4 bg-white"
+                />
+                <motion.span
+                  animate={open ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="block h-[1.5px] w-4 bg-white origin-center"
+                />
+              </span>
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* ── SIDEBAR (slides in from left when hamburger pressed) ── */}
-
-      {/* Backdrop */}
+      {/* ── APPLE FULL-SCREEN MOBILE OVERLAY ── */}
       <AnimatePresence>
         {open && (
           <motion.div
-            key="backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            onClick={() => setOpen(false)}
-            className="fixed inset-0 z-40 bg-black/50"
-            style={{ top: "80px" }}
-          />
+            key="apple-mobile-menu"
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(28px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 flex flex-col bg-black/85 px-6 pt-28 pb-10 text-white md:hidden"
+          >
+            <div className="flex flex-1 flex-col justify-between max-w-sm mx-auto w-full">
+              {/* Navigation Items */}
+              <nav className="flex flex-col space-y-2">
+                {NAV_LINKS.map((link, idx) => {
+                  const active = pathname === link.href;
+                  return (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.08 + idx * 0.05, duration: 0.3 }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        className={[
+                          "flex items-center justify-between rounded-2xl px-5 py-3.5 text-lg font-medium transition-all",
+                          active
+                            ? "bg-white/10 text-white font-semibold shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15)]"
+                            : "text-zinc-400 hover:text-white hover:bg-white/[0.05]",
+                        ].join(" ")}
+                      >
+                        <span>{link.label}</span>
+                        {active ? (
+                          <span className="h-2 w-2 rounded-full bg-ember" />
+                        ) : (
+                          <svg viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4 opacity-40">
+                            <path fillRule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" clipRule="evenodd" />
+                          </svg>
+                        )}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </nav>
+
+              {/* Mobile Card Bottom Telemetry */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.3 }}
+                className="rounded-2xl border border-white/10 bg-zinc-900/60 p-5 backdrop-blur-md space-y-3"
+              >
+                <div className="flex items-center justify-between text-xs text-zinc-400 border-b border-white/[0.06] pb-2.5">
+                  <span className="font-corporate tracking-[0.2em] text-[10px]">CORPORATE STATUS</span>
+                  <span className="text-white font-medium">CAC RC 1300720</span>
+                </div>
+                <div className="flex items-center justify-between text-xs text-zinc-400">
+                  <span className="font-corporate tracking-[0.2em] text-[10px]">DIRECT HOTLINE</span>
+                  <a href="tel:+2348032447065" className="text-ember font-medium hover:underline">
+                    +234 803 244 7065
+                  </a>
+                </div>
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="mt-2 block w-full rounded-xl bg-white py-3 text-center text-sm font-semibold text-black transition hover:bg-zinc-200"
+                >
+                  Request Technical Consultation →
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Sidebar panel */}
-      <motion.aside
-        initial={false}
-        className={[
-          "fixed bottom-0 left-0 z-40 w-[280px] overflow-y-auto bg-ink",
-          "border-r border-white/10",
-          "transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
-          open ? "translate-x-0" : "-translate-x-full",
-        ].join(" ")}
-        style={{ top: "80px" }}
-      >
-        <nav className="flex flex-col">
-          {NAV_LINKS.map((link, i) => {
-            const active = pathname === link.href;
-            const Icon = NAV_ICONS[i];
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={[
-                  "group relative flex items-center gap-4 px-5 py-4 transition-colors",
-                  "border-b border-white/[0.07]",
-                  active
-                    ? "bg-white/[0.08] text-white"
-                    : "text-white/70 hover:bg-white/[0.05] hover:text-white",
-                ].join(" ")}
-              >
-                {/* Left ember accent */}
-                <span
-                  className={[
-                    "absolute left-0 top-1/2 h-6 w-[3px] -translate-y-1/2 rounded-r-full transition-all",
-                    active ? "bg-ember opacity-100" : "bg-ember opacity-0 group-hover:opacity-40",
-                  ].join(" ")}
-                />
-                {/* Icon */}
-                <span className={active ? "text-ember" : "text-white/40 group-hover:text-white/70"}>
-                  <Icon />
-                </span>
-                {/* Label */}
-                <span className="flex-1 font-display text-[15px] font-medium tracking-wide">
-                  {link.label}
-                </span>
-                {/* Chevron */}
-                <svg
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className={[
-                    "h-3.5 w-3.5 transition-transform",
-                    active ? "translate-x-0.5 text-ember/70" : "text-white/20 group-hover:text-white/40",
-                  ].join(" ")}
-                >
-                  <path d="M6 4l4 4-4 4" />
-                </svg>
-              </Link>
-            );
-          })}
-        </nav>
-
-        {/* Bottom contact info */}
-        <div className="mt-auto border-t border-white/10 px-6 py-8 text-xs text-white/45 space-y-4">
-          <div>
-            <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-1">OFFICE</p>
-            <p>Abuja, Nigeria</p>
-          </div>
-          <div>
-            <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-1">ENQUIRIES</p>
-            <p>mukaiburger@gmail.com</p>
-          </div>
-          <div>
-            <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-1">PHONE</p>
-            <p>+234 (0) 803 244 7065</p>
-          </div>
-        </div>
-      </motion.aside>
     </>
   );
 }

@@ -1,263 +1,169 @@
 "use client";
 
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Reveal } from "@/components/site/Reveal";
 
 const REASONS = [
   {
     n: "01",
     t: "Structured Project Management",
-    short: "Clear plans. Clear ownership.",
-    d: "Defined programs, clear ownership and weekly progress reporting — you always know what's happening and what's next.",
-    stat: "Weekly reporting",
-    statSub: "every active site",
+    short: "Clear Programs · Direct Ownership",
+    d: "Structured critical-path scheduling, weekly progress audits, and direct accountability — you always possess exact site visibility.",
+    stat: "WEEKLY AUDIT",
+    statSub: "EVERY ACTIVE SITE",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.2" className="h-full w-full">
-        <rect x="8" y="8" width="32" height="32" rx="4" />
-        <line x1="8" y1="18" x2="40" y2="18" />
-        <line x1="16" y1="8" x2="16" y2="18" />
-        <line x1="32" y1="8" x2="32" y2="18" />
-        <path d="M14 28l5 5 11-11" strokeLinecap="round" strokeLinejoin="round" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+        <rect x="3" y="3" width="18" height="18" rx="3" />
+        <path d="M3 9h18M9 21V9" />
       </svg>
     ),
   },
   {
     n: "02",
-    t: "Transparent Communication",
-    short: "Direct access. No switchboards.",
-    d: "Clients reach decision-makers directly. Issues surface early — not after they've become expensive problems.",
-    stat: "Direct leadership",
-    statSub: "access on every project",
+    t: "Direct Executive Communication",
+    short: "Direct Access · Zero Switchboards",
+    d: "Principals and institutional clients communicate directly with Engr. Matthew Adewale. Critical decisions resolve immediately without bureaucratic delays.",
+    stat: "DIRECT LINE",
+    statSub: "EXECUTIVE DIRECTIVE",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.2" className="h-full w-full">
-        <path d="M8 12a4 4 0 014-4h24a4 4 0 014 4v16a4 4 0 01-4 4H28l-8 8v-8H12a4 4 0 01-4-4V12z" />
-        <line x1="16" y1="20" x2="32" y2="20" />
-        <line x1="16" y1="26" x2="26" y2="26" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
       </svg>
     ),
   },
   {
     n: "03",
-    t: "Quality-Focused Execution",
-    short: "Specs are non-negotiable.",
-    d: "Materials verified, work inspected, quality documented — not assumed. Specifications set at contract are what get built.",
-    stat: "Zero-compromise",
-    statSub: "on specifications",
+    t: "Uncompromising Quality Control",
+    short: "Specifications Non-Negotiable",
+    d: "Rebar tensile tests, batching plant calibration, optical theodolite leveling, and cube crushing records strictly documented for structural integrity.",
+    stat: "100% SPEC COMPLIANCE",
+    statSub: "BS & COREN STANDARDS",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.2" className="h-full w-full">
-        <circle cx="24" cy="20" r="12" />
-        <path d="M24 10v10l6 4" />
-        <circle cx="24" cy="38" r="4" />
-        <path d="M21 38l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
       </svg>
     ),
   },
   {
     n: "04",
-    t: "Cost Optimisation",
-    short: "Your budget works harder.",
-    d: "Rigorous quantity surveying from day one — your budget goes to construction, not to waste or surprises.",
-    stat: "QS-validated",
-    statSub: "bills of quantities",
+    t: "Transparent Quantity Surveying",
+    short: "Value Engineering · Zero Waste",
+    d: "Comprehensive Bill of Quantities (BOQ) with realistic rate analysis. Capital goes straight into foundational concrete and steel, avoiding wasteful surprises.",
+    stat: "QS-VALIDATED",
+    statSub: "ACCURATE BILL OF QUANTITIES",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.2" className="h-full w-full">
-        <circle cx="24" cy="24" r="16" />
-        <path d="M24 14v2m0 16v2M18 20c0-1.5 2.7-3 6-3s6 1.5 6 3-2.7 3-6 3-6 1.5-6 3 2.7 3 6 3 6-1.5 6-3" strokeLinecap="round" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 6v12M15 9.5a3.5 3.5 0 00-7 0c0 4 7 2 7 6a3.5 3.5 0 01-7 0" />
       </svg>
     ),
   },
   {
     n: "05",
-    t: "Safety & Compliance",
-    short: "Site discipline. Zero shortcuts.",
-    d: "Commitment to industry standards and responsible site practices. Unsafe sites cost money, time and reputation.",
-    stat: "Full compliance",
-    statSub: "CAC, COREN, NSE standards",
+    t: "Regulatory Trust & Certifications",
+    short: "COREN · CAC · NSE Registered",
+    d: "Fully registered civil engineering contractor (CAC RC 1300720, Inc. 2015) in full standing with the Council for the Regulation of Engineering in Nigeria.",
+    stat: "CAC RC 1300720",
+    statSub: "OFFICIAL REGISTRATION",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.2" className="h-full w-full">
-        <path d="M24 6l14 6v12c0 9-7 14-14 18C17 38 10 33 10 24V12l14-6z" />
-        <path d="M18 24l4 4 8-8" strokeLinecap="round" strokeLinejoin="round" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+        <polyline points="10 9 9 9 8 9" />
       </svg>
     ),
   },
   {
     n: "06",
-    t: "Attention to Detail",
-    short: "Nothing is unimportant.",
-    d: "Careful execution at every stage — from specification review to final finishes. The difference between good and great lives in the details.",
-    stat: "Stage-by-stage",
-    statSub: "quality inspection",
+    t: "Heavy Civil & High-Rise Mastery",
+    short: "From Bridges to Penthouses",
+    d: "Demonstrated technical versatility across federal highways, deep swamp culverts, massive retaining walls, and multi-storey towers in Banana Island.",
+    stat: "DUAL EXPERTISE",
+    statSub: "CIVIL & ULTRA-LUXURY",
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.2" className="h-full w-full">
-        <circle cx="22" cy="22" r="12" />
-        <path d="M31 31l9 9" strokeLinecap="round" />
-        <circle cx="22" cy="22" r="4" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-6 w-6">
+        <rect x="4" y="2" width="16" height="20" rx="2" />
+        <line x1="9" y1="22" x2="9" y2="2" />
+        <path d="M4 12h16" />
       </svg>
     ),
   },
 ];
 
 export function WhyChooseUs() {
-  const [active, setActive] = useState(0);
-  const r = REASONS[active];
-
   return (
-    <section className="bg-background py-20 md:py-32">
-      <div className="mx-auto max-w-7xl px-5 lg:px-10">
+    <section className="relative bg-black py-24 md:py-36 text-white overflow-hidden border-b border-white/[0.08]">
+      {/* Ambient Glow */}
+      <div className="pointer-events-none absolute left-1/3 top-1/2 h-[500px] w-[700px] rounded-full bg-ember/10 blur-[160px]" />
+
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-10">
         <Reveal>
-          <p className="font-corporate text-[10px] tracking-[0.3em] text-ember">
-            WHY CLIENTS CHOOSE US
-          </p>
-          <h2
-            className="mt-4 max-w-2xl font-display font-medium leading-[1.06] text-ink"
-            style={{ fontSize: "clamp(1.9rem, 4.5vw, 3.5rem)" }}
-          >
-            Reliability is a system —<br className="hidden sm:block" /> not a slogan.
-          </h2>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-            Most construction problems aren't about materials — they're about management, communication and accountability.
-          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1 text-[10px] font-semibold tracking-[0.25em] text-ember">
+                <span>●</span> WHY PRINCIPALS CHOOSE US
+              </div>
+              <h2 className="mt-4 font-display text-[clamp(2.1rem,4.5vw,3.6rem)] font-bold leading-[1.06] tracking-tight text-white">
+                Reliability is a system.{" "}
+                <br />
+                <span className="apple-text-gradient">Not a slogan.</span>
+              </h2>
+            </div>
+            <p className="max-w-xs text-sm leading-relaxed text-zinc-400">
+              The operational discipline, engineering clarity, and transparency that differentiate Mukaiburger across Nigeria.
+            </p>
+          </div>
         </Reveal>
 
-        {/* Desktop View */}
-        <div className="mt-12 hidden lg:grid lg:grid-cols-[300px_1fr] lg:gap-6">
-          <div className="flex flex-col gap-2">
-            {REASONS.map((reason, i) => (
-              <button
-                key={reason.n}
-                type="button"
-                onClick={() => setActive(i)}
-                className={`group relative flex items-center gap-4 rounded-xl px-5 py-4 text-left transition-all duration-300 ${
-                  active === i ? "bg-ink text-white" : "bg-secondary text-ink hover:bg-border/50"
-                }`}
-              >
-                <span
-                  className={`font-corporate text-[9px] tracking-[0.28em] ${
-                    active === i ? "text-ember" : "text-ink/30"
-                  }`}
-                >
-                  {reason.n}
-                </span>
-                <div className="flex-1 min-w-0">
-                  <p
-                    className={`font-display text-sm font-medium leading-tight ${
-                      active === i ? "text-white" : "text-ink"
-                    }`}
-                  >
-                    {reason.t}
-                  </p>
-                  <p
-                    className={`mt-0.5 font-corporate text-[8px] tracking-[0.12em] ${
-                      active === i ? "text-white/45" : "text-ink/30"
-                    }`}
-                  >
-                    {reason.short}
-                  </p>
-                </div>
-                {active === i && (
-                  <motion.div
-                    layoutId="activeBar"
-                    className="h-4 w-0.5 flex-shrink-0 rounded-full bg-ember"
-                  />
-                )}
-              </button>
-            ))}
-          </div>
-          <AnimatePresence mode="wait">
+        {/* Apple Bento Grid of 6 Pillars */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {REASONS.map((r, idx) => (
             <motion.div
-              key={active}
-              initial={{ opacity: 0, x: 14 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -8 }}
-              transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
-              className="relative overflow-hidden rounded-2xl border border-border bg-background p-10"
+              key={r.n}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, delay: idx * 0.06 }}
+              className="group relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-white/10 bg-zinc-950/70 p-7 sm:p-8 backdrop-blur-2xl transition-all duration-500 hover:border-white/25 hover:bg-zinc-900/60 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)]"
             >
-              <div className="pointer-events-none absolute -right-8 -top-8 h-48 w-48 text-ink/[0.04]">
-                {r.icon}
+              <div>
+                <div className="flex items-center justify-between">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.06] border border-white/10 text-amber-400 group-hover:scale-110 transition-transform">
+                    {r.icon}
+                  </div>
+                  <span className="font-corporate text-[9px] font-semibold tracking-widest text-zinc-500">
+                    PILLAR · {r.n}
+                  </span>
+                </div>
+
+                <h3 className="mt-6 font-display text-xl font-bold text-white transition-colors group-hover:text-amber-300">
+                  {r.t}
+                </h3>
+                <p className="mt-1 font-corporate text-[8.5px] font-semibold tracking-[0.18em] text-ember uppercase">
+                  {r.short}
+                </p>
+                <p className="mt-3.5 text-xs sm:text-sm leading-relaxed text-zinc-400">
+                  {r.d}
+                </p>
               </div>
-              <span className="font-corporate text-[10px] tracking-[0.35em] text-ember">
-                {r.n}
-              </span>
-              <div className="mt-4 h-14 w-14 text-ember">{r.icon}</div>
-              <h3 className="mt-5 font-display text-3xl font-medium text-ink">{r.t}</h3>
-              <p className="mt-4 max-w-lg text-base leading-loose text-muted-foreground">
-                {r.d}
-              </p>
-              <div className="mt-8 inline-flex items-center gap-4 rounded-xl bg-secondary px-5 py-3.5">
-                <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-ember" />
+
+              {/* Stat footer */}
+              <div className="mt-6 border-t border-white/[0.06] pt-4 flex items-center justify-between">
                 <div>
-                  <p className="font-display text-lg font-medium text-ink">{r.stat}</p>
-                  <p className="font-corporate text-[9px] tracking-[0.18em] text-ink/45">
-                    {r.statSub.toUpperCase()}
+                  <p className="font-display text-xs font-bold text-white">
+                    {r.stat}
+                  </p>
+                  <p className="font-corporate text-[8px] tracking-wider text-zinc-500">
+                    {r.statSub}
                   </p>
                 </div>
-              </div>
-              <div className="absolute bottom-0 left-0 h-0.5 w-full bg-border">
-                <motion.div
-                  className="h-full bg-ember"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  style={{ originX: 0 }}
-                />
+                <span className="h-1.5 w-1.5 rounded-full bg-ember animate-pulse" />
               </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* Mobile Accordion */}
-        <div className="mt-10 flex flex-col gap-2 lg:hidden">
-          {REASONS.map((reason, i) => {
-            const isOpen = active === i;
-            return (
-              <div
-                key={reason.n}
-                className={`overflow-hidden rounded-2xl border transition-colors ${
-                  isOpen ? "border-ember/30 bg-ink" : "border-border bg-background"
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => setActive(isOpen ? (i + 1) % REASONS.length : i)}
-                  className="flex w-full items-center gap-4 p-5 text-left"
-                >
-                  <span
-                    className={`font-corporate text-[9px] tracking-[0.28em] ${
-                      isOpen ? "text-ember" : "text-ink/30"
-                    }`}
-                  >
-                    {reason.n}
-                  </span>
-                  <p className={`flex-1 font-display text-base font-medium ${isOpen ? "text-white" : "text-ink"}`}>
-                    {reason.t}
-                  </p>
-                  <motion.span
-                    animate={{ rotate: isOpen ? 45 : 0 }}
-                    className={`text-xl leading-none ${isOpen ? "text-ember" : "text-ink/20"}`}
-                  >
-                    +
-                  </motion.span>
-                </button>
-                <motion.div
-                  initial={false}
-                  animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-5 pb-5 pt-0">
-                    <p className="text-sm leading-relaxed text-white/55">{reason.d}</p>
-                    <div className="mt-4 inline-flex items-center gap-3 rounded-lg bg-white/8 px-4 py-2.5">
-                      <span className="h-1.5 w-1.5 rounded-full bg-ember" />
-                      <p className="font-corporate text-[8px] tracking-[0.15em] text-white/45">
-                        {reason.stat.toUpperCase()} — {reason.statSub.toUpperCase()}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>
