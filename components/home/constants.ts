@@ -141,7 +141,7 @@ export const VERIFIED_PROJECTS: Project[] = [
     category: "Turnkey Residential Developments",
     pillar: "turnkey",
     year: "2017 – Present",
-    image: "/projects/akure-residential-homes.png",
+    image: "/projects/akure-residential-superstructure-roofing.jpg",
     client: "Private Property Investors",
     scope: "Multiple residential duplexes, blocks of luxury flats, gated family villas, and turnkey structural delivery from virgin ground to finishes.",
     description: "Flagship private residential developments engineered with zero-defect structural integrity.",
