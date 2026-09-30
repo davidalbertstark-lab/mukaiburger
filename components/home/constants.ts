@@ -153,7 +153,7 @@ export const VERIFIED_PROJECTS: Project[] = [
     category: "Turnkey Residential Build",
     pillar: "turnkey",
     year: "2021 – 2022",
-    image: "/images/project-1.jpg",
+    image: "/projects/ile-oluji-luxury-private-residence.jpg",
     client: "Private Client",
     scope: "Complete turnkey architectural and structural residential construction, perimeter compound civil engineering, and luxury finishes.",
     description: "Bespoke private luxury villa engineered from foundation trenching to completed handover.",
