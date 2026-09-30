@@ -165,7 +165,7 @@ export const VERIFIED_PROJECTS: Project[] = [
     category: "Residential Construction & Supervision",
     pillar: "turnkey",
     year: "2019 – 2021",
-    image: "/images/project-4.jpg",
+    image: "/projects/ibadan-residential-oversight-blockwork.jpg",
     client: "Private Property Owners",
     scope: "Multi-unit residential construction, structural engineering supervision, quality control auditing, and material testing.",
     description: "High-standard residential build executed with rigorous structural oversight and cost accountability.",
