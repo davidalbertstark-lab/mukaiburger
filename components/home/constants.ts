@@ -41,7 +41,7 @@ export const VERIFIED_PROJECTS: Project[] = [
     category: "Heavy Industrial Civil Works",
     pillar: "infrastructure",
     year: "2018 – 2020",
-    image: "/images/cta.jpg",
+    image: "/projects/dangote-petroleum-refinery-civil-works.jpg",
     client: "Dangote Oil Refining Company (DORC)",
     scope: "Heavy industrial concrete foundations, administrative building complexes, and high-tolerance technical substructures at the world's largest single-train refinery.",
     description: "Critical civil structures and administrative site infrastructure supporting the continental mega-refinery.",
