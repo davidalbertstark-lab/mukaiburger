@@ -37,66 +37,76 @@ const SOCIALS = [
 
 export function FinalCTA() {
   return (
-    <section className="relative isolate overflow-hidden bg-black text-white py-28 md:py-40 border-b border-white/[0.08]">
+    <section className="relative isolate overflow-hidden bg-ink text-white">
       <Image
         src={IMGS.cta}
         alt="Completed Mukaiburger project"
         fill
-        className="object-cover opacity-25 scale-105"
+        className="object-cover opacity-35"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/70" />
-      <div className="blueprint-grid absolute inset-0 opacity-15" />
+      <div className="absolute inset-0 bg-gradient-to-br from-ink/95 via-ink/72 to-ink/96" />
+      <div className="blueprint-grid absolute inset-0 opacity-18" />
 
-      {/* Ambient Spotlight */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ember/15 blur-[180px]" />
-
-      <div className="relative mx-auto max-w-5xl px-5 text-center lg:px-10">
+      <div className="relative mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-36">
         <Reveal>
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-1.5 text-[10px] font-semibold tracking-[0.25em] text-ember backdrop-blur-xl">
-            <span>●</span> INITIATE TECHNICAL CONSULTATION
-          </div>
-
+          <p className="font-corporate text-[10px] tracking-[0.3em] text-ember">
+            LET&apos;S BUILD
+          </p>
           <h2
-            className="mt-6 font-display font-extrabold leading-[1.03] tracking-tight text-white"
-            style={{ fontSize: "clamp(2.4rem, 6vw, 4.8rem)" }}
+            className="mt-5 max-w-3xl font-display font-medium leading-[1.04] text-white"
+            style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
           >
             Have a project in mind?
-            <br />
-            <span className="apple-text-gradient">We are ready when you are.</span>
+            <span className="block text-white/30">We&apos;re ready when you are.</span>
           </h2>
-
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-            Whether preparing statutory submissions, undertaking structural soil appraisal, or mobilizing heavy civil plant — our principal engineers are ready to consult.
+          <p className="mt-5 max-w-lg text-sm leading-loose text-white/50 sm:text-base">
+            Whether you&apos;re at the planning stage or preparing to break ground — we&apos;re ready to discuss your requirements and provide practical, honest guidance.
           </p>
         </Reveal>
 
         <Reveal delay={0.14}>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
-            <Link
-              href="/contact"
-              className="apple-pill-btn w-full sm:w-auto gap-2 bg-white px-8 py-4 text-sm font-semibold text-black transition-all hover:bg-zinc-200 hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] active:scale-95"
-            >
-              Request Formal Proposal
-              <svg viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4">
-                <path fillRule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" clipRule="evenodd" />
-              </svg>
-            </Link>
-
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <a
               href="https://wa.me/2348032447065"
-              className="apple-pill-btn w-full sm:w-auto gap-2 border border-white/20 bg-white/[0.06] px-7 py-4 text-sm font-semibold text-white backdrop-blur-2xl transition-all hover:bg-white/10 hover:border-white/30 active:scale-95"
+              className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-ember px-7 py-4 text-sm font-medium text-white transition-all hover:bg-ember-deep sm:w-auto"
             >
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              Direct WhatsApp (+234 803 244 7065)
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 flex-shrink-0">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              WhatsApp Us
             </a>
+            <a
+              href="tel:+2348032447065"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-4 text-sm font-medium text-white backdrop-blur-sm transition-all hover:border-white/60 hover:bg-white/10 sm:w-auto"
+            >
+              +234 803 244 7065
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-medium text-ink transition-all hover:bg-concrete sm:w-auto"
+            >
+              Request a Quote
+            </Link>
           </div>
         </Reveal>
 
         <Reveal delay={0.22}>
-          <div className="mt-14 inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-black/60 px-5 py-2 backdrop-blur-xl text-xs text-zinc-400">
-            <span className="font-corporate tracking-wider text-[9.5px]">CAC RC 1300720</span>
-            <span className="text-zinc-600">·</span>
-            <span className="font-corporate tracking-wider text-[9.5px]">ABUJA &amp; LAGOS HEADQUARTERS</span>
+          <div className="mt-14 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-corporate text-[8px] tracking-[0.22em] text-white/20 sm:text-[9px]">
+              MUKAIBURGER ENGINEERING NIGERIA LIMITED · RC 1300720 · CAC REGISTERED · ABUJA, NIGERIA
+            </p>
+            <div className="flex items-center gap-3">
+              {SOCIALS.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.href}
+                  aria-label={s.name}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/40 transition-all hover:border-white/40 hover:bg-white/10 hover:text-white"
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </Reveal>
       </div>

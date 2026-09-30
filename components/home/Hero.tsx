@@ -13,129 +13,153 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.65, 0.95]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.55, 0.88]);
 
-  const specs = [
-    { label: "FOUNDED & INCORPORATED", val: "2015 · CAC RC 1300720" },
-    { label: "VERIFIED FLAGSHIPS", val: "15 High-Impact Projects" },
-    { label: "GEOGRAPHIC REACH", val: "Nationwide Infrastructure" },
-    { label: "REGULATORY COMPLIANCE", val: "COREN & NSE Registered" },
+  // Trust strip: hidden at scroll=0, fades in after 15% scroll
+  const trustOpacity = useTransform(scrollYProgress, [0.15, 0.35], [0, 1]);
+  const trustY = useTransform(scrollYProgress, [0.15, 0.35], [16, 0]);
+
+  const trustItems = [
+    { label: "Founded", val: "2015" },
+    { label: "RC Number", val: "1300720" },
+    { label: "Coverage", val: "Nationwide" },
+    { label: "Registered", val: "CAC / COREN" },
   ];
 
   return (
     <section
       ref={ref}
-      className="relative flex min-h-[100svh] w-full flex-col justify-between overflow-hidden bg-black text-white"
+      className="relative w-full overflow-hidden bg-ink text-white"
+      style={{ minHeight: "100svh" }}
     >
-      {/* Cinematic Parallax Background */}
+      {/* Parallax background */}
       <motion.div style={{ y }} className="absolute inset-0">
         <Image
           src={IMGS.hero}
-          alt="Mukaiburger engineering site"
+          alt="Mukaiburger construction site"
           fill
           priority
-          className="scale-105 object-cover opacity-60"
+          className="scale-110 object-cover"
         />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/40 to-black pointer-events-none" />
       </motion.div>
 
-      {/* Apple Dark Gradient Veil & Blueprint Grid */}
       <motion.div
         style={{ opacity: overlayOpacity }}
-        className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black pointer-events-none"
+        className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/55 to-ink"
       />
-      <div className="blueprint-grid absolute inset-0 opacity-20 pointer-events-none" />
+      <div className="blueprint-grid absolute inset-0 opacity-25" />
 
-      {/* Ambient Top Glow Spotlight */}
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-ember/15 blur-[120px]" />
+      {/* RC tag — desktop only */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute right-5 top-1/2 hidden -translate-y-1/2 -rotate-90 font-corporate text-[9px] tracking-[0.5em] text-white/20 lg:right-10 lg:block"
+      >
+        RC · 1300720 · NIGERIA
+      </motion.div>
 
-      {/* Main Content Area */}
-      <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-5 pt-28 pb-12 sm:px-8 sm:pt-36 sm:pb-16">
-        {/* Apple Keynote Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1 text-[11px] font-medium tracking-[0.2em] text-zinc-300 backdrop-blur-xl"
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-ember animate-pulse" />
-          EST. 2015 · CIVIL INFRASTRUCTURE &amp; LUXURY ENGINEERING
-        </motion.div>
+      {/* Main content layout */}
+      <div
+        className="relative mx-auto flex max-w-7xl flex-col px-5 lg:px-10"
+        style={{ minHeight: "100svh" }}
+      >
+        {/* Spacer below navbar */}
+        <div className="h-28 flex-shrink-0 sm:h-32" />
 
-        {/* Apple Titanium Metallic Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 max-w-4xl font-display text-[clamp(2.4rem,6vw,5.2rem)] font-bold leading-[1.04] tracking-tight text-white"
-        >
-          Engineered for enduring strength.
-          <br />
-          <span className="apple-text-gradient">
-            Built with uncompromising precision.
-          </span>
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg sm:leading-relaxed"
-        >
-          From federal highway dualizations and deep river bridge crossings to subterranean semi-raft foundations on Banana Island, Mukaiburger delivers disciplined civil construction across Nigeria.
-        </motion.p>
-
-        {/* Apple Pill Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center"
-        >
-          <Link
-            href="/projects"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-zinc-200 hover:shadow-[0_0_30px_rgba(255,255,255,0.35)] active:scale-95"
+        {/* Hero text */}
+        <div className="flex-shrink-0 max-w-4xl">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-corporate text-[10px] tracking-[0.3em] text-white/55 sm:text-[11px] sm:tracking-[0.32em]"
           >
-            Explore 15 Verified Flagships
-            <svg viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4">
-              <path fillRule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" clipRule="evenodd" />
-            </svg>
-          </Link>
+            <span className="text-ember">●</span>&nbsp; EST. 2015 · ENGINEERING ·
+            CONSTRUCTION · INFRASTRUCTURE
+          </motion.p>
 
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:bg-white/10 hover:border-white/30 active:scale-95"
+          <motion.h1
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-5 font-display font-medium leading-[1.06] tracking-tight"
+            style={{ fontSize: "clamp(2rem, 6vw, 4.5rem)" }}
           >
-            Consult Chief Engineer
-          </Link>
-        </motion.div>
-      </div>
+            Engineering, construction
+            <br className="hidden sm:block" /> and infrastructure
+            <span className="text-white/40"> —</span>
+            <br />
+            built on precision,
+            <br />
+            reliability and trust.
+          </motion.h1>
 
-      {/* Apple Telemetry Specs Strip (Docked at Bottom) */}
-      <div className="relative mx-auto w-full max-w-6xl px-5 pb-6 sm:px-8 sm:pb-8">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="mt-5 max-w-lg text-sm leading-relaxed text-white/65 sm:text-base"
+          >
+            Structured, accountable construction across Nigeria — from foundation to
+            finish — with disciplined project management and uncompromising quality.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.65 }}
+            className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4"
+          >
+            <Link
+              href="/projects"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-ink transition hover:bg-ember hover:text-white sm:w-auto"
+            >
+              View Projects <span aria-hidden>→</span>
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/35 px-6 py-3.5 text-sm font-medium text-white transition hover:border-ember hover:bg-ember sm:w-auto"
+            >
+              Request Consultation
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Spacer pushing trust strip to bottom */}
+        <div className="flex-1" style={{ minHeight: "clamp(20px, 4vh, 48px)" }} />
+
+        {/* Trust strip */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-2xl sm:grid-cols-4"
+          style={{ opacity: trustOpacity, y: trustY }}
+          className="mb-6 flex-shrink-0 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.05] backdrop-blur-sm sm:grid-cols-4"
         >
-          {specs.map((item) => (
+          {trustItems.map((item) => (
             <div
               key={item.label}
-              className="flex flex-col justify-center px-4 py-3.5 sm:px-6 sm:py-4 hover:bg-white/[0.03] transition-colors"
+              className="flex flex-col gap-0.5 px-3 py-2.5 sm:px-5 sm:py-4"
             >
-              <span className="font-corporate text-[8px] font-semibold tracking-[0.2em] text-zinc-400 sm:text-[9px]">
-                {item.label}
+              <span className="font-corporate text-[6px] tracking-[0.18em] text-white/30 sm:text-[8px]">
+                {item.label.toUpperCase()}
               </span>
-              <span className="mt-1 font-display text-xs font-semibold text-white sm:text-sm">
+              <span className="font-display text-xs font-medium text-white sm:text-sm">
                 {item.val}
               </span>
             </div>
           ))}
         </motion.div>
       </div>
+
+      {/* Scroll hint */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="pointer-events-none absolute bottom-[140px] right-5 hidden items-center gap-2 font-corporate text-[10px] tracking-[0.3em] text-white/35 sm:flex lg:right-10"
+      >
+        SCROLL <span className="block h-7 w-px bg-white/20" />
+      </motion.div>
     </section>
   );
 }

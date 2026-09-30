@@ -7,173 +7,176 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Reveal } from "@/components/site/Reveal";
 import { VERIFIED_PROJECTS } from "./constants";
 
-const PILLAR_TABS = [
-  { id: "all", label: "All Flagships" },
-  { id: "infrastructure", label: "Infrastructure & Civil" },
-  { id: "luxury", label: "Banana Island Luxury" },
-  { id: "turnkey", label: "Turnkey & Commercial" },
-] as const;
+const ICONIC_PROJECTS = VERIFIED_PROJECTS.slice(0, 6).map((p) => ({
+  slug: p.slug,
+  t: p.title,
+  loc: p.location,
+  cat: p.category,
+  year: p.year,
+  img: p.image,
+}));
 
 export function IconicProjects() {
-  const [activeTab, setActiveTab] = useState<string>("all");
-
-  const filteredProjects =
-    activeTab === "all"
-      ? VERIFIED_PROJECTS.slice(0, 6)
-      : VERIFIED_PROJECTS.filter((p) => p.pillar === activeTab);
+  const [isPaused, setIsPaused] = useState(false);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const allCards = [...ICONIC_PROJECTS, ...ICONIC_PROJECTS];
 
   return (
-    <section className="relative bg-black py-24 md:py-36 overflow-hidden text-white border-b border-white/[0.08]">
-      {/* Ambient Radial Spotlight */}
-      <div className="pointer-events-none absolute right-1/4 top-1/3 h-[500px] w-[600px] rounded-full bg-ember/10 blur-[150px]" />
-
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-10">
-        {/* Apple Style Editorial Header */}
+    <section className="bg-secondary py-20 md:py-28 overflow-hidden">
+      {/* Header */}
+      <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <Reveal>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="flex items-end justify-between">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1 text-[10px] font-semibold tracking-[0.25em] text-ember">
-                <span>●</span> VERIFIED ENGINEERING ROSTER
-              </div>
-              <h2 className="mt-5 font-display text-[clamp(2.1rem,4.5vw,3.6rem)] font-bold leading-[1.06] tracking-tight text-white">
-                Architectural elegance.{" "}
-                <br />
-                <span className="apple-text-gradient">Structural supremacy.</span>
+              <p className="font-corporate text-[10px] tracking-[0.3em] text-ember">
+                SELECTED PROJECTS
+              </p>
+              <h2
+                className="mt-4 font-display font-medium leading-[1.06] text-ink"
+                style={{ fontSize: "clamp(1.9rem, 4.5vw, 3.5rem)" }}
+              >
+                Real projects.
+                <span className="text-ink/30"> Real progress.</span>
+                <br />Real results.
               </h2>
             </div>
-
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 self-start rounded-full border border-white/15 bg-white/[0.05] px-5 py-2.5 text-xs font-semibold text-zinc-300 backdrop-blur-xl transition hover:bg-white hover:text-black hover:border-white"
+              className="hidden flex-shrink-0 font-corporate text-[10px] tracking-[0.28em] text-ink/40 transition-colors hover:text-ember sm:block"
             >
-              Explore Full 15 Flagships Archive →
+              ALL PROJECTS →
             </Link>
           </div>
+          <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            A selection of projects reflecting our commitment to quality, reliability and disciplined execution.
+          </p>
         </Reveal>
+      </div>
 
-        {/* Apple Interactive Segmented Control */}
-        <div className="mt-10 flex overflow-x-auto pb-2 scrollbar-none">
-          <div className="inline-flex items-center rounded-full border border-white/10 bg-zinc-950/80 p-1.5 backdrop-blur-2xl">
-            {PILLAR_TABS.map((tab) => {
-              const active = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveTab(tab.id)}
-                  className={[
-                    "relative whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-colors duration-300",
-                    active ? "text-black" : "text-zinc-400 hover:text-white",
-                  ].join(" ")}
-                >
-                  {active && (
-                    <motion.div
-                      layoutId="active-project-tab"
-                      className="absolute inset-0 rounded-full bg-white shadow-[0_2px_12px_rgba(255,255,255,0.3)]"
-                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                    />
-                  )}
-                  <span className="relative z-10">{tab.label}</span>
-                </button>
-              );
-            })}
+      {/* Scrolling strip */}
+      <div className="mt-10 relative">
+        {/* Edge fades */}
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 bg-gradient-to-r from-secondary to-transparent sm:w-20" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-secondary to-transparent sm:w-20" />
+
+        <style>{`
+          @keyframes scrollLeft {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+          }
+          .projects-strip {
+            animation: scrollLeft 42s linear infinite;
+          }
+          .projects-strip.paused {
+            animation-play-state: paused;
+          }
+        `}</style>
+
+        <div
+          className="overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => {
+            setIsPaused(false);
+            setHoveredIdx(null);
+          }}
+        >
+          <div
+            className={`projects-strip flex gap-4 sm:gap-5 ${isPaused ? "paused" : ""}`}
+            style={{ width: "max-content", paddingLeft: "1.25rem" }}
+          >
+            {allCards.map((p, i) => (
+              <Link
+                key={`${p.slug}-${i}`}
+                href={`/projects#${p.slug}`}
+                className="group relative flex-shrink-0 block"
+                style={{ width: "clamp(240px, 28vw, 380px)" }}
+                onMouseEnter={() => setHoveredIdx(i)}
+                onMouseLeave={() => setHoveredIdx(null)}
+              >
+                <div className="relative overflow-hidden rounded-2xl" style={{ aspectRatio: "4/5" }}>
+                  <div
+                    className="absolute inset-0 transition-transform duration-700 ease-out"
+                    style={{ transform: hoveredIdx === i ? "scale(1.07)" : "scale(1)" }}
+                  >
+                    <Image src={p.img} alt={p.t} fill className="object-cover opacity-85" />
+                  </div>
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(to top, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.1) 55%, transparent 100%)",
+                    }}
+                  />
+
+                  {/* Category badge */}
+                  <div className="absolute left-3 top-3">
+                    <span className="rounded-full border border-white/15 bg-ink/50 px-2.5 py-1 font-corporate text-[8px] tracking-[0.2em] text-ember/80 backdrop-blur-sm">
+                      {p.cat.toUpperCase()}
+                    </span>
+                  </div>
+
+                  {/* Year */}
+                  <div className="absolute right-3 top-3">
+                    <span className="font-corporate text-[9px] tracking-[0.18em] text-white/30">
+                      {p.year}
+                    </span>
+                  </div>
+
+                  {/* Arrow indicator */}
+                  <div
+                    className="absolute right-3 bottom-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-ember/80 backdrop-blur-sm transition-all duration-300"
+                    style={{
+                      opacity: hoveredIdx === i ? 1 : 0,
+                      transform: hoveredIdx === i ? "scale(1)" : "scale(0.75)",
+                    }}
+                  >
+                    <span className="text-white text-sm font-medium">↗</span>
+                  </div>
+                </div>
+
+                <div className="pt-3.5 pb-2">
+                  <h3 className="font-display text-base font-medium leading-snug text-ink transition-colors group-hover:text-ember sm:text-lg">
+                    {p.t}
+                  </h3>
+                  <p className="mt-1.5 flex items-center gap-1.5 font-corporate text-[9px] tracking-[0.15em] text-ink/40">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-3 w-3 flex-shrink-0 text-ember/60">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    {p.loc}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
 
-        {/* Apple Bento Grid Layout */}
-        <motion.div
-          layout
-          className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        {/* Pause indicator */}
+        <AnimatePresence>
+          {isPaused && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="pointer-events-none absolute right-5 top-3 flex items-center gap-2 rounded-full border border-border bg-background/90 px-3 py-1.5 backdrop-blur-sm sm:right-8"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-ember" />
+              <span className="font-corporate text-[8px] tracking-[0.2em] text-ink/50">
+                PAUSED
+              </span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Mobile link */}
+      <div className="mx-auto mt-6 max-w-7xl px-5 sm:hidden lg:px-10">
+        <Link
+          href="/projects"
+          className="font-corporate text-[10px] tracking-[0.28em] text-ink/40 hover:text-ember"
         >
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((p, idx) => {
-              const isHeroCard = idx === 0;
-              return (
-                <motion.div
-                  key={p.slug}
-                  layout
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.35, delay: idx * 0.04 }}
-                  className={[
-                    "group relative overflow-hidden rounded-[28px] border border-white/10 bg-zinc-950/60 backdrop-blur-xl transition-all duration-500",
-                    "hover:border-white/25 hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.9),inset_0_1px_0_0_rgba(255,255,255,0.2)]",
-                    isHeroCard
-                      ? "md:col-span-2 lg:col-span-2 md:row-span-2 flex flex-col justify-between"
-                      : "flex flex-col justify-between",
-                  ].join(" ")}
-                >
-                  {/* Card Visual / Image */}
-                  <div
-                    className={[
-                      "relative w-full overflow-hidden",
-                      isHeroCard ? "aspect-[16/10] sm:aspect-[16/9]" : "aspect-[4/3]",
-                    ].join(" ")}
-                  >
-                    <Image
-                      src={p.image}
-                      alt={p.title}
-                      fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-
-                    {/* Top Floating Badges */}
-                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-                      <span className="rounded-full border border-white/15 bg-black/60 px-3 py-1 font-corporate text-[8.5px] font-semibold tracking-[0.2em] text-amber-400 backdrop-blur-md">
-                        {p.category.toUpperCase()}
-                      </span>
-                      <span className="font-corporate text-[9px] font-semibold tracking-wider text-white/70 bg-black/40 rounded-full px-2.5 py-0.5 backdrop-blur-md border border-white/10">
-                        {p.year}
-                      </span>
-                    </div>
-
-                    {/* Corner Apple Arrow Button */}
-                    <div className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:scale-110">
-                      <svg viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4">
-                        <path fillRule="evenodd" d="M4.22 11.78a.75.75 0 010-1.06L9.44 5.5H5.75a.75.75 0 010-1.5h5.5a.75.75 0 01.75.75v5.5a.75.75 0 01-1.5 0V6.56l-5.22 5.22a.75.75 0 01-1.06 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                  </div>
-
-                  {/* Card Content & Telemetry */}
-                  <div className="p-6 sm:p-7 flex flex-col justify-between flex-1">
-                    <div>
-                      <p className="font-corporate text-[9px] font-semibold tracking-[0.2em] text-ember">
-                        {p.location.toUpperCase()}
-                      </p>
-                      <h3
-                        className={[
-                          "mt-2 font-display font-bold leading-tight text-white transition-colors group-hover:text-amber-300",
-                          isHeroCard ? "text-xl sm:text-2xl" : "text-lg",
-                        ].join(" ")}
-                      >
-                        {p.title}
-                      </h3>
-                      <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-zinc-400 line-clamp-2">
-                        {p.description}
-                      </p>
-                    </div>
-
-                    {/* Scope Telemetry Chip */}
-                    <div className="mt-5 border-t border-white/[0.08] pt-4 flex items-center justify-between text-xs text-zinc-400">
-                      <span className="font-corporate text-[8.5px] tracking-wider text-zinc-400">
-                        CLIENT: <strong className="text-zinc-200">{p.client}</strong>
-                      </span>
-                      <Link
-                        href={`/projects#${p.slug}`}
-                        className="font-corporate text-[9px] font-semibold tracking-[0.2em] text-amber-400 hover:underline"
-                      >
-                        VIEW SPEC →
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
+          ALL PROJECTS →
+        </Link>
       </div>
     </section>
   );

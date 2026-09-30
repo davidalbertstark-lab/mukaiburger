@@ -1,15 +1,7 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-
-export const viewport: Viewport = {
-  themeColor: "#000000",
-  colorScheme: "dark",
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mukaiburger.vercel.app"),
@@ -56,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark bg-black">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -73,9 +65,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-black text-zinc-100 selection:bg-ember selection:text-white flex flex-col">
+      <body>
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
