@@ -53,7 +53,7 @@ export const VERIFIED_PROJECTS: Project[] = [
     category: "Healthcare Infrastructure",
     pillar: "infrastructure",
     year: "2021 – 2023",
-    image: "/images/project-3.jpg",
+    image: "/projects/new-massey-children-hospital-lagos-island.jpg",
     client: "Lagos State Government (Ministry of Health)",
     scope: "7-storey, 150-bed ultra-modern specialist paediatric hospital and emergency healthcare complex on constrained urban island terrain.",
     description: "State-of-the-art tertiary paediatric healthcare facility executed with advanced reinforced concrete framing and tower crane logistics.",
