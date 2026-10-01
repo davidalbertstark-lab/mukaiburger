@@ -3,18 +3,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/SectionLabel";
+import { IMGS } from "@/components/home/constants";
+import { SectorsSection } from "@/components/home/SectorsSection";
 
 export const metadata: Metadata = {
-  title: "Services — Mukaiburger Engineering Nigeria Limited",
+  title: "Sectors & Disciplines — Mukaiburger Engineering Nigeria Limited",
   description:
-    "Building construction, civil engineering, project management and renovation — delivered by an accountable team to a single standard.",
+    "Building construction, civil engineering, engineering supervision and renovation — delivered by an accountable team across Nigeria's key sectors.",
 };
 
 const SECTORS = [
   {
     n: "01",
     t: "Building Construction",
-    img: "/images/project-1.jpg",
+    img: IMGS.project1,
     d: "Residential, commercial and institutional structures delivered turnkey. Substructure, superstructure, MEP coordination, fit-out and handover under one accountable program.",
     bullets: [
       "Reinforced concrete frames",
@@ -26,26 +28,26 @@ const SECTORS = [
   {
     n: "02",
     t: "Civil Engineering",
-    img: "/images/project-2.jpg",
+    img: IMGS.project2,
     d: "Road infrastructure, drainage, earthworks and supporting civil works engineered for the realities of Nigerian terrain and load conditions.",
     bullets: ["Roadworks & pavements", "Storm drainage", "Bulk earthworks", "Site servicing"],
   },
   {
     n: "03",
-    t: "Project Management",
-    img: "/images/project-3.jpg",
-    d: "Independent program, cost and quality oversight across multi-contractor sites. We surface risk early, track recovery actions and report straight to the principal.",
+    t: "Engineering Supervision",
+    img: IMGS.project3,
+    d: "Independent technical supervision, QA/QC material testing, piling integrity, and rigorous site auditing across multi-contractor and high-complexity civil sites.",
     bullets: [
-      "Master programs",
-      "Cost & cash-flow",
-      "Stakeholder coordination",
-      "Weekly client reporting",
+      "QA / QC material compliance",
+      "Piling & foundation verification",
+      "Cost, program & risk management",
+      "Transparent on-site client reporting",
     ],
   },
   {
     n: "04",
     t: "Renovation & Rehabilitation",
-    img: "/images/project-4.jpg",
+    img: IMGS.project4,
     d: "Bringing existing buildings and infrastructure back to specification — safely, economically and without disrupting ongoing operations.",
     bullets: [
       "Structural strengthening",
@@ -131,11 +133,17 @@ export default function ServicesPage() {
         })}
       </section>
 
-      <section className="bg-ink py-24 text-white md:py-28">
+      {/* ── 8 Key Industry Sectors ── */}
+      <SectorsSection />
+
+      <section className="border-t border-white/10 bg-ink py-24 text-white md:py-28">
         <div className="mx-auto flex max-w-7xl flex-col items-start gap-6 px-6 lg:flex-row lg:items-end lg:justify-between lg:px-10">
-          <h2 className="max-w-2xl font-display text-3xl font-medium leading-tight md:text-5xl">
-            Tell us about your site.
-          </h2>
+          <div>
+            <p className="font-corporate text-[10px] tracking-[0.3em] text-ember">DIRECT ENGAGEMENT</p>
+            <h2 className="mt-2 max-w-2xl font-display text-3xl font-medium leading-tight md:text-5xl">
+              Tell us about your site.
+            </h2>
+          </div>
           <Link
             href="/contact"
             className="inline-flex items-center gap-3 rounded-full bg-ember px-8 py-4 text-sm font-medium text-white transition hover:bg-ember-deep"

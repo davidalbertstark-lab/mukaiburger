@@ -282,7 +282,7 @@ export function Navbar() {
           </div>
           <div>
             <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-1">ENQUIRIES</p>
-            <p>mukaiburger@gmail.com</p>
+            <p>mukaiburger.official@gmail.com</p>
           </div>
           <div>
             <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-1">PHONE</p>

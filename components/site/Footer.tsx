@@ -69,7 +69,7 @@ export function Footer() {
             </p>
             <ul className="mt-4 space-y-3 text-sm text-white/80">
               <li>Lagos, Nigeria</li>
-              <li>mukaiburger@gmail.com</li>
+              <li>mukaiburger.official@gmail.com</li>
               <li>+234 (0) 803 244 7065</li>
             </ul>
           </div>
@@ -80,7 +80,6 @@ export function Footer() {
             © {new Date().getFullYear()} Mukaiburger Engineering Nigeria
             Limited. All rights reserved.
           </p>
-          <p className="font-corporate tracking-[0.22em]">BUILT ON PRECISION</p>
         </div>
       </div>
     </footer>
