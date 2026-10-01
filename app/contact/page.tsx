@@ -43,9 +43,35 @@ export default function ContactPage() {
                     {k}
                   </p>
                   <div className="mt-2 space-y-1 text-sm text-ink">
-                    {(v as string[]).map((line) => (
-                      <p key={line}>{line}</p>
-                    ))}
+                    {(v as string[]).map((line) => {
+                      if (line.includes("@")) {
+                        return (
+                          <p key={line}>
+                            <a href={`mailto:${line}`} className="hover:text-ember transition-colors">
+                              {line}
+                            </a>
+                          </p>
+                        );
+                      }
+                      if (line.includes("+234")) {
+                        return (
+                          <p key={line}>
+                            <a
+                              href="https://wa.me/2348032447065"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:text-ember transition-colors inline-flex items-center gap-1.5"
+                            >
+                              <span>{line}</span>
+                              <span className="text-[11px] text-emerald-600 font-medium">
+                                (WhatsApp)
+                              </span>
+                            </a>
+                          </p>
+                        );
+                      }
+                      return <p key={line}>{line}</p>;
+                    })}
                   </div>
                 </div>
               ))}
