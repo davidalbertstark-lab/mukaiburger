@@ -7,7 +7,7 @@ export const IMGS = {
   project1: "/projects/ile-oluji-luxury-private-residence.jpg",
   project2: "/projects/calabar-asphalt-paver-paving.jpg",
   project3: "/projects/woodlands-site-excavation-supervision.jpg",
-  project4: "/images/project-4.jpg",
+  project4: "/projects/sangotedo-duplex-external-plastering-renovation.jpg",
   process: "/images/site-qa-surveying.jpg",
   cta: "/images/cta.jpg",
   sec_residential: "/images/project-1.jpg",
