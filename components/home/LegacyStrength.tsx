@@ -38,7 +38,7 @@ const LEGACY_STATS = [
     suffix: "+",
     label: "States Served",
     sub: "Growing coverage",
-    note: "FCT · Lagos · Kaduna · Niger & beyond",
+    note: "Lagos · Oyo · Ondo · Cross River & beyond",
   },
   {
     value: 4,
