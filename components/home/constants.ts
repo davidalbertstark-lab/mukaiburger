@@ -5,7 +5,7 @@ export const IMGS = {
   who_we_are: "/images/who-we-are-team.jpg",
   rooftop: "/images/banana-island-rooftop-skyline.jpg",
   project1: "/projects/ile-oluji-luxury-private-residence.jpg",
-  project2: "/images/project-2.jpg",
+  project2: "/projects/calabar-asphalt-paver-paving.jpg",
   project3: "/images/project-3.jpg",
   project4: "/images/project-4.jpg",
   process: "/images/site-qa-surveying.jpg",
