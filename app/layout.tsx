@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "engineering",
     "construction Nigeria",
     "infrastructure",
-    "Abuja engineering contractor",
+    "Lagos engineering contractor",
     "civil engineering",
     "project management",
   ],

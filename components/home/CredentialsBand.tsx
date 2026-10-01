@@ -7,7 +7,7 @@ export function CredentialsBand() {
     "RC · 1300720",
     "CAC REGISTERED",
     "EST. 2018",
-    "ABUJA · NIGERIA",
+    "LAGOS · NIGERIA",
     "BUILDING CONSTRUCTION",
     "CIVIL ENGINEERING",
     "ENGINEERING SUPERVISION",

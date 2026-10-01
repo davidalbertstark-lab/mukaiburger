@@ -115,7 +115,7 @@ export function SectorsSection() {
                 Nationwide coverage across Nigeria
               </p>
               <p className="mt-1 text-xs leading-relaxed text-white/45 sm:text-sm">
-                Headquartered in Abuja, FCT — active projects across Lagos, Kaduna, Niger and more.
+                Headquartered in Lagos, Nigeria — active projects across Ondo, Cross River, Plateau, and nationwide.
               </p>
             </div>
             <Link

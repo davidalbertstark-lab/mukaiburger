@@ -68,7 +68,7 @@ export function Footer() {
               CONTACT
             </p>
             <ul className="mt-4 space-y-3 text-sm text-white/80">
-              <li>Abuja, Nigeria</li>
+              <li>Lagos, Nigeria</li>
               <li>mukaiburger@gmail.com</li>
               <li>+234 (0) 803 244 7065</li>
             </ul>

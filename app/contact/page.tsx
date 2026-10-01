@@ -6,7 +6,7 @@ import { ContactForm } from "./ContactForm";
 export const metadata: Metadata = {
   title: "Contact — Mukaiburger Engineering Nigeria Limited",
   description:
-    "Talk to Mukaiburger Engineering about your project. Office in Abuja, project enquiries across Nigeria.",
+    "Talk to Mukaiburger Engineering about your project. Office in Lagos, Nigeria — project enquiries nationwide.",
 };
 
 export default function ContactPage() {
@@ -32,7 +32,7 @@ export default function ContactPage() {
           <Reveal className="lg:col-span-5">
             <div className="space-y-10">
               {[
-                ["CORPORATE HEADQUARTERS", ["Lagos State, Nigeria", "Active site operations across Ikoyi, Lekki & Lagos Island"]],
+                ["CORPORATE HEADQUARTERS", ["Lagos, Nigeria", "Active site operations across Ikoyi, Lekki & Lagos Island"]],
                 ["REGIONAL OPERATIONS", ["Abuja, FCT · Ondo State · Cross River · Plateau"]],
                 ["DIRECT ENQUIRIES", ["mukaiburger@gmail.com", "+234 (0) 803 244 7065"]],
                 ["CORPORATE BANKING", ["Polaris Bank Plc", "Acct: 4091245615 · RC 1300720"]],

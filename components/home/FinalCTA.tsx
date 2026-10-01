@@ -93,7 +93,7 @@ export function FinalCTA() {
         <Reveal delay={0.22}>
           <div className="mt-14 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <p className="font-corporate text-[8px] tracking-[0.22em] text-white/20 sm:text-[9px]">
-              MUKAIBURGER ENGINEERING NIGERIA LIMITED · RC 1300720 · CAC REGISTERED · ABUJA, NIGERIA
+              MUKAIBURGER ENGINEERING NIGERIA LIMITED · RC 1300720 · CAC REGISTERED · LAGOS, NIGERIA
             </p>
             <div className="flex items-center gap-3">
               {SOCIALS.map((s) => (

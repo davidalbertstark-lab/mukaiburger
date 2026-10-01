@@ -278,7 +278,7 @@ export function Navbar() {
         <div className="mt-auto border-t border-white/10 px-6 py-8 text-xs text-white/45 space-y-4">
           <div>
             <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-1">OFFICE</p>
-            <p>Abuja, Nigeria</p>
+            <p>Lagos, Nigeria</p>
           </div>
           <div>
             <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-1">ENQUIRIES</p>
