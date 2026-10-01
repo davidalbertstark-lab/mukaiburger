@@ -10,14 +10,14 @@ export const IMGS = {
   project4: "/projects/sangotedo-duplex-external-plastering-renovation.jpg",
   process: "/images/site-qa-surveying.jpg",
   cta: "/images/cta.jpg",
-  sec_residential: "/images/project-1.jpg",
-  sec_commercial: "/images/project-2.jpg",
-  sec_government: "/images/process.jpg",
-  sec_healthcare: "/images/project-3.jpg",
-  sec_educational: "/images/project-4.jpg",
-  sec_industrial: "/images/cta.jpg",
-  sec_infra: "/images/project-2.jpg",
-  sec_institutional: "/images/project-3.jpg",
+  sec_residential: "/projects/pearl-gardens-sangotedo-estate.jpg",
+  sec_commercial: "/projects/banana-island-plot-k14-tower.jpg",
+  sec_government: "/projects/borno-police-workshop.jpg",
+  sec_healthcare: "/projects/new-massey-children-hospital-lagos-island.jpg",
+  sec_educational: "/projects/cbn-centre-enugu.jpg",
+  sec_industrial: "/projects/dangote-petroleum-refinery-civil-works.jpg",
+  sec_infra: "/projects/calabar-ugep-box-culvert.jpg",
+  sec_institutional: "/projects/jos-stadium-works.jpg",
 } as const;
 
 export const VERIFIED_PROJECTS: Project[] = [
