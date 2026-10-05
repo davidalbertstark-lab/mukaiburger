@@ -97,14 +97,14 @@ export function Navbar() {
             : "bg-white/85 backdrop-blur-xl shadow-[0_1px_0_0_rgba(0,0,0,0.06)]",
         ].join(" ")}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
 
-          {/* Left: Hamburger — ember square, morphs to X */}
+          {/* Left: Hamburger — ember square, morphs to X (44px min tap target) */}
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
-            className="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-ember transition-colors hover:bg-ember-deep"
+            className="relative flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md bg-ember transition-colors hover:bg-ember-deep"
           >
             <span className="sr-only">{open ? "Close" : "Menu"}</span>
             <span aria-hidden className="flex flex-col gap-[5px]">
@@ -130,7 +130,7 @@ export function Navbar() {
           </button>
 
           {/* Center: Logo + animated brand name */}
-          <Link href="/" className="flex items-center gap-2.5">
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5">
             <div className="relative h-10 w-10 flex-shrink-0">
               <Image
                 src="/brand/logo-emblem.png"
@@ -146,11 +146,11 @@ export function Navbar() {
                 initial={{ x: -44, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-                className="pl-3 flex flex-col leading-none"
+                className="pl-2 sm:pl-3 flex flex-col leading-none"
               >
                 <span
                   className={[
-                    "transition-colors duration-500 font-display text-[22px] font-bold tracking-[-0.01em]",
+                    "transition-colors duration-500 font-display text-[19px] sm:text-[22px] font-bold tracking-[-0.01em]",
                     transparent
                       ? "text-white [text-shadow:2px_2px_0px_rgba(0,0,0,0.3),0_4px_20px_rgba(0,0,0,0.5)]"
                       : "text-ink [text-shadow:1px_1px_0px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.08)]",
@@ -160,7 +160,7 @@ export function Navbar() {
                 </span>
                 <span
                   className={[
-                    "font-corporate text-[9px] tracking-[0.22em] transition-colors duration-500",
+                    "font-corporate text-[8px] sm:text-[9px] tracking-[0.16em] sm:tracking-[0.22em] transition-colors duration-500 whitespace-nowrap",
                     transparent ? "text-white/65" : "text-muted-foreground",
                   ].join(" ")}
                 >

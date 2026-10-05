@@ -6,7 +6,7 @@ export function CredentialsBand() {
   const items = [
     "RC · 1300720",
     "CAC REGISTERED",
-    "EST. 2018",
+    "EST. 2015",
     "LAGOS · NIGERIA",
     "BUILDING CONSTRUCTION",
     "CIVIL ENGINEERING",

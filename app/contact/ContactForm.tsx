@@ -176,7 +176,7 @@ export function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             placeholder="e.g. Chief Dr. Olawale Adeyemi"
-            className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-ink outline-none transition focus:border-ember"
+            className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-[16px] sm:text-sm text-ink outline-none transition focus:border-ember"
           />
         </div>
 
@@ -190,7 +190,7 @@ export function ContactForm() {
             value={formData.company}
             onChange={handleChange}
             placeholder="e.g. Oakwood Capital Holdings"
-            className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-ink outline-none transition focus:border-ember"
+            className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-[16px] sm:text-sm text-ink outline-none transition focus:border-ember"
           />
         </div>
 
@@ -205,7 +205,7 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="e.g. o.adeyemi@oakwood.ng"
-            className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-ink outline-none transition focus:border-ember"
+            className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-[16px] sm:text-sm text-ink outline-none transition focus:border-ember"
           />
         </div>
 
@@ -219,7 +219,7 @@ export function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="e.g. +234 803 000 0000"
-            className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-ink outline-none transition focus:border-ember"
+            className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-[16px] sm:text-sm text-ink outline-none transition focus:border-ember"
           />
         </div>
       </div>
@@ -234,7 +234,7 @@ export function ContactForm() {
           value={formData.location}
           onChange={handleChange}
           placeholder="e.g. Banana Island, Ikoyi / Lekki Phase 1 / Ibadan / Akure"
-          className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-ink outline-none transition focus:border-ember"
+          className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-[16px] sm:text-sm text-ink outline-none transition focus:border-ember"
         />
       </div>
 
@@ -249,7 +249,7 @@ export function ContactForm() {
           value={formData.brief}
           onChange={handleChange}
           placeholder="Outline your project scope: proposed structure, number of floors, geotechnical conditions, timeline, or engineering supervision requirements..."
-          className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-ink outline-none transition focus:border-ember"
+          className="mt-2.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-[16px] sm:text-sm text-ink outline-none transition focus:border-ember"
         />
       </div>
 

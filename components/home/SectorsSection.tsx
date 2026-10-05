@@ -48,6 +48,7 @@ export function SectorsSection() {
               <div
                 className="group relative cursor-pointer overflow-hidden rounded-2xl"
                 style={{ aspectRatio: "3/4" }}
+                onClick={() => setHovered((prev) => (prev === i ? null : i))}
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
               >

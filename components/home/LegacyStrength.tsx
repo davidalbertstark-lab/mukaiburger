@@ -30,7 +30,7 @@ const LEGACY_STATS = [
     value: 10,
     suffix: "+",
     label: "Years of Experience",
-    sub: "Since 2018",
+    sub: "Since 2015",
     note: "Building across Nigeria consistently",
   },
   {
