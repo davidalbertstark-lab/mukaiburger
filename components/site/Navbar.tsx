@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { SocialLinksList } from "./SocialLinks";
 
 function IconHome() {
   return (
@@ -282,11 +283,19 @@ export function Navbar() {
           </div>
           <div>
             <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-1">ENQUIRIES</p>
-            <p>mukaiburger.official@gmail.com</p>
+            <a href="mailto:mukaiburger.official@gmail.com" className="text-white/70 hover:text-ember transition-colors">
+              mukaiburger.official@gmail.com
+            </a>
           </div>
           <div>
             <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-1">PHONE</p>
-            <p>+234 (0) 803 244 7065</p>
+            <a href="https://wa.me/2348032447065" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-ember transition-colors">
+              +234 (0) 803 244 7065
+            </a>
+          </div>
+          <div className="pt-2 border-t border-white/10">
+            <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-2">FOLLOW US</p>
+            <SocialLinksList />
           </div>
         </div>
       </motion.aside>

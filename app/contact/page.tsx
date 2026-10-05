@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SectionLabel } from "@/components/site/SectionLabel";
 import { Reveal } from "@/components/site/Reveal";
 import { ContactForm } from "./ContactForm";
+import { SocialLinksList } from "@/components/site/SocialLinks";
 
 export const metadata: Metadata = {
   title: "Contact — Mukaiburger Engineering Nigeria Limited",
@@ -87,6 +88,16 @@ export default function ContactPage() {
                   </svg>
                   Download Corporate Profile (PDF)
                 </a>
+              </div>
+
+              <div className="pt-4 border-t border-border">
+                <p className="font-corporate text-[10px] tracking-[0.3em] text-ember mb-3 uppercase">
+                  OFFICIAL SOCIAL MEDIA
+                </p>
+                <SocialLinksList
+                  itemClassName="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-secondary text-ink/70 transition-all hover:border-ember hover:bg-ember hover:text-white"
+                  iconClassName="h-4 w-4"
+                />
               </div>
             </div>
           </Reveal>

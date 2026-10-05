@@ -20,6 +20,24 @@ export const IMGS = {
   sec_institutional: "/projects/jos-stadium-works.jpg",
 } as const;
 
+export const SOCIAL_LINKS = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/mukaiburger-engineering/",
+    label: "Follow Mukaiburger on LinkedIn",
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/mukaiburgerengineering?stkn=dzlxcWt2MWNqOXJy",
+    label: "Follow Mukaiburger on Instagram",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61595132034335",
+    label: "Follow Mukaiburger on Facebook",
+  },
+] as const;
+
 export const VERIFIED_PROJECTS: Project[] = [
   // Pillar 1: Institutional & National Infrastructure
   {

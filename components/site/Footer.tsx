@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SocialLinksList } from "./SocialLinks";
 
 export function Footer() {
   return (
@@ -69,8 +70,21 @@ export function Footer() {
             </p>
             <ul className="mt-4 space-y-3 text-sm text-white/80">
               <li>Lagos, Nigeria</li>
-              <li>mukaiburger.official@gmail.com</li>
-              <li>+234 (0) 803 244 7065</li>
+              <li>
+                <a href="mailto:mukaiburger.official@gmail.com" className="hover:text-ember transition-colors">
+                  mukaiburger.official@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/2348032447065"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-ember transition-colors"
+                >
+                  +234 (0) 803 244 7065
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -80,6 +94,12 @@ export function Footer() {
             © {new Date().getFullYear()} Mukaiburger Engineering Nigeria
             Limited. All rights reserved.
           </p>
+          <div className="flex items-center gap-3">
+            <span className="font-corporate text-[9px] tracking-[0.25em] text-white/40 uppercase mr-1">
+              CONNECT
+            </span>
+            <SocialLinksList />
+          </div>
         </div>
       </div>
     </footer>
