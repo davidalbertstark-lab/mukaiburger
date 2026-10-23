@@ -283,8 +283,8 @@ export function Navbar() {
           </div>
           <div>
             <p className="font-corporate text-[9px] tracking-[0.3em] text-white/30 mb-1">ENQUIRIES</p>
-            <a href="mailto:mukaiburger.official@gmail.com" className="text-white/70 hover:text-ember transition-colors">
-              mukaiburger.official@gmail.com
+            <a href="mailto:contact@mukaiburger.com" className="text-white/70 hover:text-ember transition-colors">
+              contact@mukaiburger.com
             </a>
           </div>
           <div>

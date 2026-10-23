@@ -56,7 +56,7 @@ export async function POST(req: Request) {
           },
           body: JSON.stringify({
             from: "Mukaiburger Enquiries <onboarding@resend.dev>",
-            to: ["mukaiburger.official@gmail.com"],
+            to: ["contact@mukaiburger.com", "mukaiburger.official@gmail.com"],
             reply_to: email,
             subject: `Project Enquiry: ${name} — ${location || "Nigeria"}`,
             html: `

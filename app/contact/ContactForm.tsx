@@ -112,7 +112,7 @@ export function ContactForm() {
 
         <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
           Your project brief has been received and routed directly to our principal engineering desk at{" "}
-          <strong className="text-ink">mukaiburger.official@gmail.com</strong>. We review project parameters and respond promptly with next steps.
+          <strong className="text-ink">contact@mukaiburger.com</strong>. We review project parameters and respond promptly with next steps.
         </p>
 
         {/* WhatsApp Fast-Track Banner */}
@@ -297,8 +297,8 @@ export function ContactForm() {
 
       <p className="text-[11px] text-muted-foreground pt-1">
         Direct inbox:{" "}
-        <a href="mailto:mukaiburger.official@gmail.com" className="text-ember hover:underline">
-          mukaiburger.official@gmail.com
+        <a href="mailto:contact@mukaiburger.com" className="text-ember hover:underline">
+          contact@mukaiburger.com
         </a>{" "}
         · Mobile / WhatsApp:{" "}
         <a href="https://wa.me/2348032447065" className="text-ember hover:underline">

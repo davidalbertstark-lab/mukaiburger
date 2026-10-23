@@ -35,7 +35,9 @@ export default function ContactPage() {
               {[
                 ["CORPORATE HEADQUARTERS", ["Lagos, Nigeria", "Active site operations across Ikoyi, Lekki & Lagos Island"]],
                 ["REGIONAL OPERATIONS", ["Oyo State (Ibadan) · Ondo State · Cross River · Plateau"]],
-                ["DIRECT ENQUIRIES", ["mukaiburger.official@gmail.com", "+234 (0) 803 244 7065"]],
+                ["GENERAL ENQUIRIES", ["contact@mukaiburger.com", "+234 (0) 803 244 7065"]],
+                ["PROJECT PROPOSALS & COORDINATION", ["projects@mukaiburger.com"]],
+                ["TENDERS, BIDS & RFQs", ["tenders@mukaiburger.com"]],
                 ["CORPORATE BANKING", ["Polaris Bank Plc", "Acct: 4091245615 · RC 1300720"]],
                 ["OPERATING HOURS", ["Mon–Fri  ·  08:00 – 18:00 WAT"]],
               ].map(([k, v]) => (

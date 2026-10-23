@@ -71,8 +71,13 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-white/80">
               <li>Lagos, Nigeria</li>
               <li>
-                <a href="mailto:mukaiburger.official@gmail.com" className="hover:text-ember transition-colors">
-                  mukaiburger.official@gmail.com
+                <a href="mailto:contact@mukaiburger.com" className="hover:text-ember transition-colors">
+                  contact@mukaiburger.com
+                </a>
+              </li>
+              <li>
+                <a href="mailto:tenders@mukaiburger.com" className="hover:text-ember transition-colors text-xs text-white/60">
+                  tenders@mukaiburger.com
                 </a>
               </li>
               <li>
