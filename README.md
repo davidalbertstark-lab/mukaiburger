@@ -3,13 +3,14 @@
 > **Modern digital platform for engineering, construction, and infrastructure management.**  
 > Built with Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS v4, and Framer Motion.
 
-🚀 **Live Deployment:** [mukaiburger.vercel.app](https://mukaiburger.vercel.app)
+🚀 **Official Domain:** [mukaiburger.com](https://mukaiburger.com)  
+🌐 **Vercel Mirror:** [mukaiburger.vercel.app](https://mukaiburger.vercel.app)
 
 ---
 
 ## 🏗️ Overview
 
-This platform serves as the digital front for an engineering and infrastructure firm (Est. 2018, RC: 1300720). The site communicates institutional reliability, precision engineering, and structured execution across industrial, commercial, civil, and residential projects.
+This platform serves as the digital front for Mukaiburger Engineering Nigeria Limited (Est. 2015, RC: 1300720). The site communicates institutional reliability, precision engineering, and structured execution across industrial, commercial, civil, and residential projects.
 
 The architecture emphasizes fluid scroll-driven interaction, modern component composition, and optimized Core Web Vitals across all device viewports.
 

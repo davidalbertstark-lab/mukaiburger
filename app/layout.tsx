@@ -11,7 +11,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mukaiburger.vercel.app"),
+  metadataBase: new URL("https://mukaiburger.com"),
   title: {
     default: "Mukaiburger Engineering Nigeria Limited",
     template: "%s | Mukaiburger Engineering",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Mukaiburger Engineering Nigeria Limited",
     description:
       "Engineering, construction & infrastructure solutions built on precision, reliability and trust across Nigeria.",
-    url: "https://mukaiburger.vercel.app",
+    url: "https://mukaiburger.com",
     siteName: "Mukaiburger Engineering",
     locale: "en_US",
     type: "website",
