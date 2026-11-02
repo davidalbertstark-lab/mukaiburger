@@ -317,11 +317,19 @@ export default async function ProjectPage({ params }: PageProps) {
                     !
                   </span>
                   <strong className="text-amber-950 font-semibold text-base">
-                    Why Deep Foundation Engineering Matters to Property Developers:
+                    {project.pillar === "infrastructure"
+                      ? "Why Hydraulic Drainage & Roadbed Compaction Matters in Civil Infrastructure:"
+                      : project.pillar === "luxury"
+                      ? "Why Deep Foundation Engineering Matters to Property Developers:"
+                      : "Why Rigorous Structural Supervision Matters in Turnkey Construction:"}
                   </strong>
                 </div>
                 <p className="text-sm leading-relaxed text-amber-950/90">
-                  Waterfront developments that cut corners on foundation piling face irreversible structural damage: uneven building settlement, cracked perimeter walls, and hydrostatic groundwater seepage. By anchoring bored piles to deep load-bearing strata and pouring monolithic marine-grade semi-rafts, Mukaiburger guarantees structural integrity for decades to come.
+                  {project.pillar === "infrastructure"
+                    ? "Civil roads that cut corners on continuous stormwater drainage face rapid deterioration: erosion gullies, subgrade saturation, pothole collapse, and complete seasonal roadbed washouts. By combining deep reinforced concrete line drains, precast culvert structures, and high-density compacted asphaltic courses, Mukaiburger builds enduring regional lifelines that protect public and commercial investments for decades."
+                    : project.pillar === "luxury"
+                    ? "Waterfront developments that cut corners on foundation piling face irreversible structural damage: uneven building settlement, cracked perimeter walls, and hydrostatic groundwater seepage. By anchoring bored piles to deep load-bearing strata and pouring monolithic marine-grade semi-rafts, Mukaiburger guarantees structural integrity for decades to come."
+                    : "Commercial and residential builds delivered without licensed structural oversight risk chronic deflection, cracked structural masonry, and costly post-handover remediation. Mukaiburger enforces daily on-site COREN supervision, strict concrete slump verification, and certified rebar spacing to ensure permanent asset security."}
                 </p>
               </div>
             </div>
@@ -329,17 +337,29 @@ export default async function ProjectPage({ params }: PageProps) {
 
           <div className="h-px bg-border" />
 
-          {/* Chapter 3: Execution & Superstructure */}
+          {/* Chapter 3: Execution & Structural Operations */}
           <div className="grid gap-8 lg:grid-cols-12 items-start">
             <div className="lg:col-span-4">
               <span className="font-corporate text-xs font-bold tracking-widest text-ember uppercase">
-                03 / SUPERSTRUCTURE &amp; QA
+                {project.pillar === "infrastructure"
+                  ? "03 / CIVIL EXECUTION & QA"
+                  : project.pillar === "luxury"
+                  ? "03 / SUPERSTRUCTURE & QA"
+                  : "03 / STRUCTURAL INTEGRITY & QA"}
               </span>
               <h2 className="mt-2 font-display text-2xl sm:text-3xl font-medium text-ink">
-                High-Rise Framing, Heavy Fleet &amp; Oversight
+                {project.pillar === "infrastructure"
+                  ? "Heavy Plant Fleet, Pavement Execution & Oversight"
+                  : project.pillar === "luxury"
+                  ? "High-Rise Framing, Heavy Fleet & Oversight"
+                  : "Turnkey Superstructure, QA/QC & Finishing"}
               </h2>
               <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                Daily field supervision, climbing cranes, slump tests, and structural safety.
+                {project.pillar === "infrastructure"
+                  ? "Mechanized compaction, bituminous spray, slump tests, and structural safety."
+                  : project.pillar === "luxury"
+                  ? "Daily field supervision, climbing cranes, slump tests, and structural safety."
+                  : "Material quality audits, laser alignment, and certified handover standards."}
               </p>
             </div>
             <div className="lg:col-span-8 space-y-6">
