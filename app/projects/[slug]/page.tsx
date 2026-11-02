@@ -100,9 +100,9 @@ export default async function ProjectPage({ params }: PageProps) {
   );
 
   return (
-    <article className="min-h-screen bg-[#0a0c0e] text-white selection:bg-ember selection:text-white">
+    <article className="min-h-screen bg-[#0e1117] text-[#f0f3f6] selection:bg-ember selection:text-white">
       {/* ── BREADCRUMB & UTILITY HEADER ── */}
-      <nav aria-label="Breadcrumb" className="pt-28 pb-4 border-b border-white/10 bg-[#0d0f12]">
+      <nav aria-label="Breadcrumb" className="pt-28 pb-4 border-b border-white/10 bg-[#12161f]">
         <div className="mx-auto max-w-7xl px-5 lg:px-10 flex flex-wrap items-center justify-between gap-4 text-xs">
           <ol className="flex items-center gap-2 text-white/50">
             <li>
@@ -130,7 +130,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
           <Link
             href="/projects"
-            className="inline-flex items-center gap-1.5 font-corporate text-[10px] tracking-widest text-white/60 hover:text-ember transition-colors"
+            className="inline-flex items-center gap-1.5 font-corporate text-[10px] tracking-widest text-white/70 hover:text-ember transition-colors"
           >
             <span>←</span> ALL 15 PROJECTS
           </Link>
@@ -138,7 +138,7 @@ export default async function ProjectPage({ params }: PageProps) {
       </nav>
 
       {/* ── 01: FULL-BLEED ANGLED HERO (Julius Berger kw-module-0200 inspired) ── */}
-      <header className="relative min-h-[70vh] lg:min-h-[82vh] flex items-end overflow-hidden border-b border-white/10">
+      <header className="relative min-h-[72vh] lg:min-h-[84vh] flex items-end overflow-hidden border-b border-white/10 bg-[#0e1117]">
         {/* Background Visual */}
         <div className="absolute inset-0">
           <Image
@@ -147,11 +147,11 @@ export default async function ProjectPage({ params }: PageProps) {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center filter brightness-90 contrast-105"
+            className="object-cover object-center filter brightness-95 contrast-105"
           />
           {/* Architectural Dark Multi-layer Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0c0e] via-[#0a0c0e]/70 to-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0c0e]/90 via-[#0a0c0e]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e1117] via-[#0e1117]/75 to-black/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0e1117]/95 via-[#0e1117]/60 to-transparent" />
         </div>
 
         {/* Hero Content Block */}
@@ -159,17 +159,17 @@ export default async function ProjectPage({ params }: PageProps) {
           <div className="max-w-4xl">
             {/* Badges strip */}
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-              <span className="rounded-full bg-ember px-3 py-1 font-corporate text-[9px] font-bold tracking-widest text-white shadow-lg shadow-ember/20">
+              <span className="rounded-full bg-ember px-3.5 py-1 font-corporate text-[9px] font-bold tracking-widest text-white shadow-lg shadow-ember/25">
                 {project.category.toUpperCase()}
               </span>
-              <span className="rounded-full border border-white/20 bg-black/60 px-3 py-1 font-corporate text-[9px] tracking-wider text-white/90 backdrop-blur-md">
+              <span className="rounded-full border border-white/20 bg-black/60 px-3.5 py-1 font-corporate text-[9px] tracking-wider text-white backdrop-blur-md">
                 {project.pillar.toUpperCase()} PILLAR
               </span>
-              <span className="rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3 py-1 font-corporate text-[9px] font-semibold text-emerald-400 backdrop-blur-md">
+              <span className="rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3.5 py-1 font-corporate text-[9px] font-semibold text-emerald-400 backdrop-blur-md">
                 {project.year}
               </span>
               {project.status && (
-                <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 font-corporate text-[9px] text-white/80 backdrop-blur-md hidden sm:inline-block">
+                <span className="rounded-full border border-white/20 bg-white/10 px-3.5 py-1 font-corporate text-[9px] text-white/90 backdrop-blur-md hidden sm:inline-block">
                   {project.status}
                 </span>
               )}
@@ -181,7 +181,7 @@ export default async function ProjectPage({ params }: PageProps) {
             </h1>
 
             {/* Sub-meta */}
-            <div className="mt-6 flex flex-wrap items-center gap-y-3 gap-x-8 text-sm text-white/70">
+            <div className="mt-6 flex flex-wrap items-center gap-y-3 gap-x-8 text-sm text-white/80">
               <div className="flex items-center gap-2">
                 <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 text-ember flex-shrink-0">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
@@ -191,15 +191,15 @@ export default async function ProjectPage({ params }: PageProps) {
 
               {(project.clientPartner || project.client) && (
                 <div className="flex items-center gap-2">
-                  <span className="text-white/40">Client / Partner:</span>
-                  <span className="font-medium text-white">{project.clientPartner || project.client}</span>
+                  <span className="text-white/50">Developer / Partner:</span>
+                  <span className="font-semibold text-white">{project.clientPartner || project.client}</span>
                 </div>
               )}
 
               {project.directorInCharge && (
                 <div className="flex items-center gap-2 hidden md:flex">
-                  <span className="text-white/40">Supervision:</span>
-                  <span className="font-medium text-ember">{project.directorInCharge}</span>
+                  <span className="text-white/50">Supervision:</span>
+                  <span className="font-medium text-amber-300">{project.directorInCharge}</span>
                 </div>
               )}
             </div>
@@ -231,13 +231,13 @@ export default async function ProjectPage({ params }: PageProps) {
       </header>
 
       {/* ── 02: FACTS & FIGURES RIBBON (Julius Berger kw-module-2200 inspired) ── */}
-      <section aria-label="Key Facts and Figures" className="border-b border-white/10 bg-[#12151b] py-8 sm:py-10">
+      <section aria-label="Key Facts and Figures" className="border-b border-white/10 bg-[#161b24] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <div className="flex items-center justify-between pb-4 border-b border-white/10">
             <span className="font-corporate text-[10px] font-bold tracking-[0.28em] text-ember uppercase">
-              KEY FACTS &amp; ENGINEERING SPECIFICATIONS
+              KEY SPECIFICATIONS &amp; ENGINEERING METRICS
             </span>
-            <span className="font-corporate text-[10px] tracking-widest text-white/40">
+            <span className="font-corporate text-[10px] tracking-widest text-white/50">
               CAC RC 1300720 • VERIFIED DOSSIER
             </span>
           </div>
@@ -246,7 +246,7 @@ export default async function ProjectPage({ params }: PageProps) {
             {metrics.map((m, idx) => (
               <div
                 key={`${m.label}-${idx}`}
-                className="rounded-xl border border-white/5 bg-white/[0.02] p-4 transition hover:border-ember/40 hover:bg-white/[0.04]"
+                className="rounded-xl border border-white/10 bg-[#1b222d] p-4 transition hover:border-ember/40 hover:bg-[#202836]"
               >
                 <div className="font-corporate text-[9px] tracking-wider text-white/50 uppercase">
                   {m.label}
@@ -260,28 +260,28 @@ export default async function ProjectPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ── 03: THREE-PART ENGINEERING NARRATIVE (Julius Berger kw-module-3100 inspired) ── */}
-      <section className="py-20 lg:py-28 border-b border-white/10 bg-[#0a0c0e]">
+      {/* ── 03: THREE-PART STORY-DRIVEN NARRATIVE (Julius Berger kw-module-3100 inspired) ── */}
+      <section className="py-20 lg:py-28 border-b border-white/10 bg-[#0e1117]">
         <div className="mx-auto max-w-7xl px-5 lg:px-10 space-y-20">
           {/* Section 1: Overview */}
           <div className="grid gap-8 lg:grid-cols-12 items-start">
             <div className="lg:col-span-4">
               <span className="font-corporate text-xs font-bold tracking-widest text-ember uppercase">
-                01 / COMMISSIONING &amp; CONTEXT
+                01 / THE MANDATE
               </span>
               <h2 className="mt-2 font-display text-2xl sm:text-3xl font-medium text-white">
                 Project Scope &amp; Architectural Mandate
               </h2>
-              <p className="mt-2 text-xs text-white/40 leading-relaxed">
-                Institutional brief, site acquisition, and program requirements.
+              <p className="mt-2 text-xs text-white/50 leading-relaxed">
+                Client partnership, prime enclave selection, and program requirements.
               </p>
             </div>
             <div className="lg:col-span-8 space-y-4">
-              <p className="text-base sm:text-lg leading-relaxed text-white/80 font-normal">
+              <p className="text-base sm:text-lg leading-relaxed text-white/90 font-normal">
                 {project.description || project.scope}
               </p>
               {project.scope && (
-                <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-sm leading-relaxed text-white/70">
+                <div className="rounded-2xl border border-white/10 bg-[#161b24] p-6 text-sm leading-relaxed text-white/80">
                   <strong className="text-white font-medium block mb-1">Contractual Scope of Civil Works:</strong>
                   {project.scope}
                 </div>
@@ -295,53 +295,61 @@ export default async function ProjectPage({ params }: PageProps) {
           <div className="grid gap-8 lg:grid-cols-12 items-start">
             <div className="lg:col-span-4">
               <span className="font-corporate text-xs font-bold tracking-widest text-ember uppercase">
-                02 / GEOTECHNICAL &amp; STRUCTURAL
+                02 / GEOTECHNICAL DEFENSE
               </span>
               <h2 className="mt-2 font-display text-2xl sm:text-3xl font-medium text-white">
                 The Engineering Challenge Overcome
               </h2>
-              <p className="mt-2 text-xs text-white/40 leading-relaxed">
-                Subsoil mechanics, hydrostatic pressures, and load distribution.
+              <p className="mt-2 text-xs text-white/50 leading-relaxed">
+                Managing coastal water tables, hydrostatic pressures, and differential settlement risks.
               </p>
             </div>
-            <div className="lg:col-span-8 space-y-4">
-              <p className="text-base leading-relaxed text-white/80">
+            <div className="lg:col-span-8 space-y-5">
+              <p className="text-base leading-relaxed text-white/90">
                 {project.challenge ||
                   `Engineering deep foundations and structural superstructures requires accounting for Nigerian geological and hydrological variance. From soft alluvial coastal clays along the Lagos Lagoon to difficult subgrade soils across regional transit corridors, Mukaiburger deploys bespoke geotechnical solutions.`}
               </p>
+
+              {/* Developer Value Callout */}
+              <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-6 text-sm leading-relaxed text-amber-200/95">
+                <strong className="text-white font-semibold text-base block mb-2">
+                  Why Deep Foundation Engineering Matters to Property Developers:
+                </strong>
+                Waterfront developments that cut corners on foundation piling face irreversible structural damage: uneven building settlement, cracked perimeter walls, and hydrostatic groundwater seepage. By anchoring bored piles to deep load-bearing strata and pouring monolithic marine-grade semi-rafts, Mukaiburger guarantees structural integrity for decades to come.
+              </div>
             </div>
           </div>
 
           <div className="h-px bg-white/10" />
 
-          {/* Section 3: Execution & QA */}
+          {/* Section 3: Execution & Superstructure */}
           <div className="grid gap-8 lg:grid-cols-12 items-start">
             <div className="lg:col-span-4">
               <span className="font-corporate text-xs font-bold tracking-widest text-ember uppercase">
-                03 / ON-SITE EXECUTION &amp; QA
+                03 / SUPERSTRUCTURE &amp; QA
               </span>
               <h2 className="mt-2 font-display text-2xl sm:text-3xl font-medium text-white">
-                Plant Machinery &amp; Technical Oversight
+                High-Rise Framing, Heavy Fleet &amp; Oversight
               </h2>
-              <p className="mt-2 text-xs text-white/40 leading-relaxed">
-                Continuous field supervision, slump tests, and structural safety.
+              <p className="mt-2 text-xs text-white/50 leading-relaxed">
+                Daily field supervision, climbing cranes, slump tests, and structural safety.
               </p>
             </div>
             <div className="lg:col-span-8 space-y-6">
-              <p className="text-base leading-relaxed text-white/80">
+              <p className="text-base leading-relaxed text-white/90">
                 {project.execution ||
                   `Execution proceeded under the direct, continuous oversight of senior registered civil engineers. Batching plant operations, high-yield rebar spacing, concrete cube compression crushing tests, and laser theodolite alignments guaranteed total adherence to British Standards (BS 8110 / BS EN 1992) and Nigerian building codes.`}
               </p>
 
               {/* Highlights checklist */}
               {project.highlights && project.highlights.length > 0 && (
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                <div className="rounded-2xl border border-white/10 bg-[#161b24] p-6">
                   <span className="font-corporate text-[10px] font-bold tracking-widest text-ember uppercase block mb-4">
                     VERIFIED TECHNICAL HIGHLIGHTS
                   </span>
                   <div className="grid gap-3 sm:grid-cols-2">
                     {project.highlights.map((h, i) => (
-                      <div key={i} className="flex items-start gap-2.5 text-xs text-white/80">
+                      <div key={i} className="flex items-start gap-2.5 text-xs text-white/90">
                         <span className="text-ember font-bold mt-0.5">✓</span>
                         <span>{h}</span>
                       </div>
@@ -355,9 +363,9 @@ export default async function ProjectPage({ params }: PageProps) {
       </section>
 
       {/* ── 04: PHOTOGRAPHIC EVIDENCE GALLERY ── */}
-      <section className="py-20 lg:py-28 border-b border-white/10 bg-[#0d0f12]">
+      <section className="py-20 lg:py-28 border-b border-white/10 bg-[#12161f]">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
             <div>
               <SectionLabel index="04" tone="light">
                 FIELD ARCHIVE
@@ -365,7 +373,7 @@ export default async function ProjectPage({ params }: PageProps) {
               <h2 className="mt-3 font-display text-3xl sm:text-4xl font-medium text-white">
                 Photographic Site Records &amp; Structural Evidence
               </h2>
-              <p className="mt-2 text-sm text-white/60 max-w-2xl">
+              <p className="mt-2 text-sm text-white/70 max-w-2xl">
                 High-resolution documentation captured on-site during heavy civil earthmoving, bored piling, falsework erection, and concrete placements. Click any photo for darkroom inspection.
               </p>
             </div>
@@ -380,17 +388,17 @@ export default async function ProjectPage({ params }: PageProps) {
       </section>
 
       {/* ── 05: SENIOR ENGINEERING LEADERSHIP & CORPORATE CREDENTIALS ── */}
-      <section className="py-16 bg-[#12151b] border-b border-white/10">
+      <section className="py-16 bg-[#161b24] border-b border-white/10">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <div className="rounded-3xl border border-white/10 bg-black/40 p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="rounded-3xl border border-white/10 bg-[#1b222d] p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-2xl">
               <span className="font-corporate text-[9px] font-bold tracking-[0.25em] text-ember uppercase">
                 ENGINEERING LEADERSHIP &amp; REGULATORY COMPLIANCE
               </span>
               <h3 className="font-display text-2xl sm:text-3xl font-medium text-white">
-                Under the On-Site Directorship of Engr. Azeez Mukailah
+                Under the Directorship of Engr. Azeez Mukailah
               </h3>
-              <p className="text-sm text-white/70 leading-relaxed">
+              <p className="text-sm text-white/80 leading-relaxed">
                 Registered Engineer with the Council for the Regulation of Engineering in Nigeria (COREN), Fellow of the Nigerian Society of Engineers (FNSE). All operations executed under corporate seal of <strong>Mukaiburger Engineering Nigeria Limited (CAC RC 1300720)</strong>.
               </p>
             </div>
@@ -418,12 +426,12 @@ export default async function ProjectPage({ params }: PageProps) {
       </section>
 
       {/* ── 06: PREVIOUS / NEXT NAVIGATION FOOTER (Julius Berger kw-module-2300 inspired) ── */}
-      <footer className="grid grid-cols-1 sm:grid-cols-2 border-t border-white/10 bg-[#090b0d]">
+      <footer className="grid grid-cols-1 sm:grid-cols-2 border-t border-white/10 bg-[#0e1117]">
         <Link
           href={`/projects/${prevProject.slug}`}
-          className="flex flex-col items-start p-8 sm:p-12 text-left border-b sm:border-b-0 sm:border-r border-white/10 transition-colors hover:bg-white/[0.02] group"
+          className="flex flex-col items-start p-8 sm:p-12 text-left border-b sm:border-b-0 sm:border-r border-white/10 transition-colors hover:bg-white/[0.03] group"
         >
-          <span className="font-corporate text-[10px] tracking-widest text-white/40 uppercase group-hover:text-ember flex items-center gap-2">
+          <span className="font-corporate text-[10px] tracking-widest text-white/50 uppercase group-hover:text-ember flex items-center gap-2">
             <span>←</span> PREVIOUS ENGINEERING DOSSIER
           </span>
           <span className="mt-3 font-display text-lg sm:text-2xl font-medium text-white group-hover:text-ember transition-colors">
@@ -436,9 +444,9 @@ export default async function ProjectPage({ params }: PageProps) {
 
         <Link
           href={`/projects/${nextProject.slug}`}
-          className="flex flex-col items-end p-8 sm:p-12 text-right transition-colors hover:bg-white/[0.02] group"
+          className="flex flex-col items-end p-8 sm:p-12 text-right transition-colors hover:bg-white/[0.03] group"
         >
-          <span className="font-corporate text-[10px] tracking-widest text-white/40 uppercase group-hover:text-ember flex items-center gap-2">
+          <span className="font-corporate text-[10px] tracking-widest text-white/50 uppercase group-hover:text-ember flex items-center gap-2">
             NEXT ENGINEERING DOSSIER <span>→</span>
           </span>
           <span className="mt-3 font-display text-lg sm:text-2xl font-medium text-white group-hover:text-ember transition-colors">

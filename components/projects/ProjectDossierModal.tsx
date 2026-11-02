@@ -128,26 +128,26 @@ export function ProjectDossierModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-2 sm:p-4 md:p-6 backdrop-blur-md overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-2 sm:p-4 md:p-6 backdrop-blur-md overflow-y-auto"
           onClick={onClose}
         >
           <motion.div
             key="dossier-card"
-            initial={{ opacity: 0, scale: 0.96, y: 16 }}
+            initial={{ opacity: 0, scale: 0.97, y: 14 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: 16 }}
+            exit={{ opacity: 0, scale: 0.97, y: 14 }}
             transition={{ type: "spring", damping: 28, stiffness: 320 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-5xl my-auto rounded-3xl border border-white/10 bg-[#0d0f12] text-white shadow-2xl overflow-hidden flex flex-col max-h-[92vh]"
+            className="relative w-full max-w-5xl my-auto rounded-3xl border border-white/15 bg-[#0e1117] text-white shadow-2xl overflow-hidden flex flex-col max-h-[92vh]"
           >
-            {/* ── TOP UTILITY BAR ── */}
-            <div className="flex-shrink-0 flex items-center justify-between border-b border-white/10 bg-[#12151a]/95 px-5 py-3.5 backdrop-blur-md z-10">
+            {/* ── TOP UTILITY BAR (Architectural Warm Obsidian) ── */}
+            <div className="flex-shrink-0 flex items-center justify-between border-b border-white/10 bg-[#161b24]/95 px-5 py-3.5 backdrop-blur-md z-10">
               <div className="flex items-center gap-2.5 overflow-hidden">
-                <span className="inline-flex items-center rounded-full bg-ember/15 border border-ember/30 px-2.5 py-0.5 font-corporate text-[9px] font-semibold tracking-wider text-ember">
+                <span className="inline-flex items-center rounded-full bg-ember/20 border border-ember/40 px-3 py-0.5 font-corporate text-[9px] font-bold tracking-wider text-ember">
                   {project.category.toUpperCase()}
                 </span>
                 <span className="hidden sm:inline-block text-white/30">•</span>
-                <span className="hidden sm:inline-block font-corporate text-[10px] tracking-wider text-white/70 truncate">
+                <span className="hidden sm:inline-block font-corporate text-[10px] tracking-wider text-white/80 truncate">
                   {project.location}
                 </span>
               </div>
@@ -155,17 +155,17 @@ export function ProjectDossierModal({
               <div className="flex items-center gap-2">
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="hidden md:inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-medium text-white/80 transition hover:border-ember hover:bg-white/10 hover:text-white"
+                  className="hidden md:inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3.5 py-1 text-[11px] font-medium text-white/90 transition hover:border-ember hover:bg-white/10 hover:text-white"
                   title="Open permanent standalone dossier URL"
                 >
                   <span>Full Case Study</span>
-                  <span className="text-ember">↗</span>
+                  <span className="text-ember font-bold">↗</span>
                 </Link>
                 <button
                   type="button"
                   onClick={onClose}
                   aria-label="Close project dossier"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/70 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/80 transition hover:border-white/40 hover:bg-white/10 hover:text-white"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -178,7 +178,7 @@ export function ProjectDossierModal({
             {/* ── SCROLLABLE DOSSIER BODY ── */}
             <div className="flex-1 overflow-y-auto overscroll-contain">
               {/* 1. VISUAL HERO & GALLERY VIEWER */}
-              <div className="relative bg-black/60">
+              <div className="relative bg-[#0b0d11]">
                 {/* Main Viewport */}
                 <div
                   className="relative aspect-[16/9] sm:aspect-[21/10] w-full overflow-hidden cursor-zoom-in group"
@@ -196,18 +196,18 @@ export function ProjectDossierModal({
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-102"
                   />
                   {/* Subtle Gradient Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0f12] via-transparent to-black/30 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0e1117] via-transparent to-black/30 pointer-events-none" />
 
                   {/* Image Badge & Zoom Hint */}
                   <div className="absolute top-4 left-4 flex items-center gap-2">
                     {currentHeroItem.badge && (
-                      <span className="rounded-full bg-black/75 px-3 py-1 font-corporate text-[9px] font-bold tracking-wider text-white backdrop-blur-md border border-white/15">
+                      <span className="rounded-full bg-black/80 px-3.5 py-1 font-corporate text-[9px] font-bold tracking-wider text-amber-300 backdrop-blur-md border border-white/15">
                         {currentHeroItem.badge}
                       </span>
                     )}
                   </div>
 
-                  <div className="absolute top-4 right-4 rounded-full bg-black/65 px-3 py-1 font-corporate text-[9px] tracking-widest text-white/90 backdrop-blur-md border border-white/15 flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-4 right-4 rounded-full bg-black/70 px-3 py-1 font-corporate text-[9px] tracking-widest text-white backdrop-blur-md border border-white/15 flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3 w-3 text-ember">
                       <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
                     </svg>
@@ -216,51 +216,57 @@ export function ProjectDossierModal({
 
                   {/* Bottom Caption Pill */}
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
-                    <p className="max-w-2xl rounded-xl bg-black/75 px-3.5 py-2 text-xs text-white/90 backdrop-blur-md border border-white/15 line-clamp-2">
+                    <p className="max-w-2xl rounded-xl bg-black/80 px-4 py-2.5 text-xs text-white/95 backdrop-blur-md border border-white/15 line-clamp-2 leading-relaxed">
                       {currentHeroItem.caption}
                     </p>
                     {galleryItems.length > 1 && (
-                      <span className="hidden sm:inline-block rounded-full bg-black/75 px-3 py-1 font-corporate text-[10px] tracking-wider text-ember backdrop-blur-md border border-white/15">
+                      <span className="hidden sm:inline-block rounded-full bg-black/80 px-3 py-1 font-corporate text-[10px] tracking-wider text-ember backdrop-blur-md border border-white/15">
                         {activeImageIdx + 1} / {galleryItems.length}
                       </span>
                     )}
                   </div>
                 </div>
 
-                {/* Thumbnail Strip (if multiple photos) */}
+                {/* Thumbnail Strip with Fast 50KB Thumbnails */}
                 {galleryItems.length > 1 && (
-                  <div className="flex gap-2.5 overflow-x-auto p-3.5 bg-[#0a0c0e] border-t border-white/5 scrollbar-thin">
-                    {galleryItems.map((item, idx) => (
-                      <button
-                        key={`${item.src}-${idx}`}
-                        type="button"
-                        onClick={() => setActiveImageIdx(idx)}
-                        className={`relative flex-shrink-0 w-20 sm:w-24 aspect-[16/10] rounded-lg overflow-hidden border-2 transition-all ${
-                          activeImageIdx === idx
-                            ? "border-ember shadow-lg scale-102"
-                            : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30"
-                        }`}
-                      >
-                        <Image
-                          src={item.src}
-                          alt={item.caption || `Photo ${idx + 1}`}
-                          fill
-                          sizes="96px"
-                          className="object-cover"
-                        />
-                        {item.badge && (
-                          <div className="absolute bottom-0 inset-x-0 bg-black/80 px-1 py-0.5 text-[7px] font-corporate text-white/80 truncate text-center">
-                            {item.badge}
-                          </div>
-                        )}
-                      </button>
-                    ))}
+                  <div className="flex gap-2.5 overflow-x-auto p-3 bg-[#131720] border-t border-white/10 scrollbar-thin">
+                    {galleryItems.map((item, idx) => {
+                      const thumb = item.src.endsWith(".webp")
+                        ? item.src.replace(".webp", "-thumb.webp")
+                        : item.src;
+
+                      return (
+                        <button
+                          key={`${item.src}-${idx}`}
+                          type="button"
+                          onClick={() => setActiveImageIdx(idx)}
+                          className={`relative flex-shrink-0 w-20 sm:w-24 aspect-[16/10] rounded-lg overflow-hidden border-2 transition-all ${
+                            activeImageIdx === idx
+                              ? "border-ember shadow-lg scale-102"
+                              : "border-white/15 opacity-65 hover:opacity-100 hover:border-white/40"
+                          }`}
+                        >
+                          <Image
+                            src={thumb}
+                            alt={item.caption || `Photo ${idx + 1}`}
+                            fill
+                            sizes="96px"
+                            className="object-cover"
+                          />
+                          {item.badge && (
+                            <div className="absolute bottom-0 inset-x-0 bg-black/85 px-1 py-0.5 text-[7px] font-corporate text-white/90 truncate text-center">
+                              {item.badge}
+                            </div>
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
                 )}
               </div>
 
               {/* 2. HEADER DETAILS & TITLE */}
-              <div className="px-6 py-6 sm:px-8 border-b border-white/10 bg-[#0d0f12]">
+              <div className="px-6 py-7 sm:px-8 border-b border-white/10 bg-[#0e1117]">
                 <div className="flex flex-wrap items-center gap-2 font-corporate text-[10px] tracking-widest text-ember uppercase">
                   <span>{project.pillar.toUpperCase()} PILLAR</span>
                   <span>•</span>
@@ -273,42 +279,47 @@ export function ProjectDossierModal({
                   )}
                 </div>
 
-                <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-white">
+                <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-white leading-tight">
                   {project.title}
                 </h2>
 
-                <div className="mt-3 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-white/60">
-                  <span className="flex items-center gap-1.5 text-white/80">
+                <div className="mt-3 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-white/70">
+                  <span className="flex items-center gap-1.5 text-white/90">
                     <svg viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5 text-ember">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                     {project.location}
                   </span>
                   {(project.clientPartner || project.client) && (
-                    <span className="flex items-center gap-1.5 text-white/80">
-                      <span className="text-white/40">Partner / Client:</span>
+                    <span className="flex items-center gap-1.5 text-white/90">
+                      <span className="text-white/50">Partner / Developer:</span>
                       <strong>{project.clientPartner || project.client}</strong>
                     </span>
                   )}
                   {project.directorInCharge && (
-                    <span className="flex items-center gap-1.5 text-white/80">
-                      <span className="text-white/40">Supervision:</span>
+                    <span className="flex items-center gap-1.5 text-white/90">
+                      <span className="text-white/50">Supervision:</span>
                       <strong>{project.directorInCharge}</strong>
                     </span>
                   )}
                 </div>
               </div>
 
-              {/* 3. FACTS & FIGURES RIBBON (Julius Berger Inspired) */}
-              <div className="border-b border-white/10 bg-[#12151b] px-6 py-5 sm:px-8">
-                <p className="font-corporate text-[9px] font-bold tracking-[0.25em] text-ember uppercase">
-                  ENGINEERING SPECIFICATIONS &amp; FACTS
-                </p>
-                <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {/* 3. FACTS & FIGURES RIBBON (Warm Slate Background) */}
+              <div className="border-b border-white/10 bg-[#161b24] px-6 py-5 sm:px-8">
+                <div className="flex items-center justify-between pb-3 border-b border-white/5">
+                  <span className="font-corporate text-[9px] font-bold tracking-[0.25em] text-ember uppercase">
+                    ENGINEERING SPECIFICATIONS &amp; METRICS
+                  </span>
+                  <span className="font-corporate text-[9px] tracking-widest text-white/40">
+                    CAC RC 1300720 VERIFIED
+                  </span>
+                </div>
+                <div className="mt-4 grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-6">
                   {metrics.map((m, idx) => (
                     <div
                       key={`${m.label}-${idx}`}
-                      className="rounded-xl border border-white/5 bg-white/[0.02] p-3.5 hover:border-ember/30 transition-colors"
+                      className="rounded-xl border border-white/10 bg-[#1b222d] p-3.5 hover:border-ember/40 transition-colors"
                     >
                       <div className="font-corporate text-[9px] tracking-wider text-white/50 uppercase">
                         {m.label}
@@ -321,25 +332,25 @@ export function ProjectDossierModal({
                 </div>
               </div>
 
-              {/* 4. THREE-PART ENGINEERING NARRATIVE */}
-              <div className="px-6 py-8 sm:px-8 space-y-8 bg-[#0d0f12]">
+              {/* 4. THREE-PART STORY-DRIVEN NARRATIVE */}
+              <div className="px-6 py-8 sm:px-8 space-y-8 bg-[#0e1117]">
                 {/* Section A: Project Overview & Scope */}
                 <div className="grid gap-4 md:grid-cols-12">
                   <div className="md:col-span-4">
                     <h3 className="font-corporate text-xs font-bold tracking-widest text-ember uppercase">
-                      01 / PROJECT OVERVIEW
+                      01 / THE MANDATE
                     </h3>
-                    <p className="mt-1 text-xs text-white/40">
-                      Scope, commissioning, and architectural requirements.
+                    <p className="mt-1 text-xs text-white/50">
+                      Vision, location prestige, and building scope.
                     </p>
                   </div>
                   <div className="md:col-span-8 space-y-3">
-                    <p className="text-sm leading-relaxed text-white/80 font-normal">
+                    <p className="text-sm leading-relaxed text-white/90 font-normal">
                       {project.description || project.scope}
                     </p>
                     {project.scope && project.description && (
-                      <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4 text-xs leading-relaxed text-white/70">
-                        <strong className="text-white font-medium">Detailed Scope: </strong>
+                      <div className="rounded-xl border border-white/10 bg-[#161b24] p-4 text-xs leading-relaxed text-white/80">
+                        <strong className="text-white font-medium">Contractual Scope of Civil Works: </strong>
                         {project.scope}
                       </div>
                     )}
@@ -354,45 +365,51 @@ export function ProjectDossierModal({
                     <h3 className="font-corporate text-xs font-bold tracking-widest text-ember uppercase">
                       02 / THE CHALLENGE
                     </h3>
-                    <p className="mt-1 text-xs text-white/40">
-                      Site geology, soil mechanics, and engineering constraints.
+                    <p className="mt-1 text-xs text-white/50">
+                      Geological risks, coastal water table, and settlement defense.
                     </p>
                   </div>
-                  <div className="md:col-span-8">
-                    <p className="text-sm leading-relaxed text-white/80">
+                  <div className="md:col-span-8 space-y-3">
+                    <p className="text-sm leading-relaxed text-white/90">
                       {project.challenge ||
-                        `Complex geotechnical and architectural conditions required rigorous structural engineering design, continuous site elevation calculations, and precision-tested material batching conforming to Nigerian building regulations.`}
+                        `Complex coastal soil mechanics and hydrostatic lagoon pressure require rigorous deep foundation design to protect multi-storey structural loads from differential settlement.`}
                     </p>
+
+                    {/* Developer Value Callout */}
+                    <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 p-4 text-xs leading-relaxed text-amber-200/90">
+                      <strong className="text-white font-medium block mb-1">Why This Matters to Developers:</strong>
+                      In waterfront enclaves, shallow foundations risk severe settlement, wall cracks, and basement water intrusion. Our bored piling anchors the superstructure directly into load-bearing bedrock for permanent zero-settlement stability.
+                    </div>
                   </div>
                 </div>
 
                 <div className="h-px bg-white/10" />
 
-                {/* Section C: Execution & Quality Assurance */}
+                {/* Section C: Execution & High-Rise Superstructure */}
                 <div className="grid gap-4 md:grid-cols-12">
                   <div className="md:col-span-4">
                     <h3 className="font-corporate text-xs font-bold tracking-widest text-ember uppercase">
                       03 / EXECUTION &amp; QA
                     </h3>
-                    <p className="mt-1 text-xs text-white/40">
-                      Methodology, plant machinery, and COREN supervision.
+                    <p className="mt-1 text-xs text-white/50">
+                      Plant machinery, climbing cranes, and COREN directorship.
                     </p>
                   </div>
                   <div className="md:col-span-8 space-y-4">
-                    <p className="text-sm leading-relaxed text-white/80">
+                    <p className="text-sm leading-relaxed text-white/90">
                       {project.execution ||
                         `Executed under direct oversight by registered civil engineers with continuous structural slump tests, high-tensile steel inspections, and strict Health, Safety, and Environment (HSE) protocols.`}
                     </p>
 
-                    {/* Key Highlights Checklist (if available) */}
+                    {/* Highlights Checklist */}
                     {project.highlights && project.highlights.length > 0 && (
-                      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                      <div className="rounded-2xl border border-white/10 bg-[#161b24] p-4">
                         <p className="font-corporate text-[9px] font-bold tracking-widest text-ember uppercase mb-3">
                           KEY EXECUTION HIGHLIGHTS
                         </p>
                         <ul className="grid gap-2 sm:grid-cols-2">
                           {project.highlights.map((h, i) => (
-                            <li key={i} className="flex items-start gap-2 text-xs text-white/80">
+                            <li key={i} className="flex items-start gap-2 text-xs text-white/90">
                               <span className="text-ember font-bold mt-0.5">✓</span>
                               <span>{h}</span>
                             </li>
@@ -405,17 +422,17 @@ export function ProjectDossierModal({
               </div>
 
               {/* 5. DIRECT ACTION CONSULTATION CARD */}
-              <div className="px-6 py-6 sm:px-8 bg-gradient-to-br from-[#161a22] to-[#0e1117] border-t border-white/10">
+              <div className="px-6 py-6 sm:px-8 bg-gradient-to-br from-[#1a202c] to-[#12161f] border-t border-white/10">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                   <div>
                     <span className="font-corporate text-[9px] font-bold tracking-widest text-ember uppercase">
                       DIRECT ENGINEERING DESK
                     </span>
                     <h4 className="mt-1 font-display text-xl font-medium text-white">
-                      Consult with our structural team regarding this project
+                      Discuss your high-value project directly with our leadership
                     </h4>
-                    <p className="mt-1 text-xs text-white/60 max-w-xl">
-                      Discuss geotechnical feasibility, foundation piling, structural concrete execution, or request technical project documentation.
+                    <p className="mt-1 text-xs text-white/70 max-w-xl">
+                      Consult with Engr. Mukailah on geotechnical feasibility, foundation piling, multi-storey framing, or request full technical specifications.
                     </p>
                   </div>
 
@@ -453,13 +470,13 @@ export function ProjectDossierModal({
 
               {/* 6. PREVIOUS / NEXT PROJECT NAVIGATOR FOOTER */}
               {allProjects.length > 1 && (
-                <div className="grid grid-cols-2 border-t border-white/10 bg-[#0a0c0e]">
+                <div className="grid grid-cols-2 border-t border-white/10 bg-[#0b0e13]">
                   <button
                     type="button"
                     onClick={() => onSelectProject && onSelectProject(prevProject.slug)}
-                    className="flex flex-col items-start p-4 sm:p-6 text-left border-r border-white/10 transition hover:bg-white/[0.03] group"
+                    className="flex flex-col items-start p-4 sm:p-6 text-left border-r border-white/10 transition hover:bg-white/[0.04] group"
                   >
-                    <span className="font-corporate text-[9px] tracking-widest text-white/40 uppercase group-hover:text-ember flex items-center gap-1">
+                    <span className="font-corporate text-[9px] tracking-widest text-white/50 uppercase group-hover:text-ember flex items-center gap-1">
                       <span>←</span> PREVIOUS DOSSIER
                     </span>
                     <span className="mt-1 font-display text-xs sm:text-sm font-medium text-white/90 line-clamp-1 group-hover:text-white">
@@ -470,9 +487,9 @@ export function ProjectDossierModal({
                   <button
                     type="button"
                     onClick={() => onSelectProject && onSelectProject(nextProject.slug)}
-                    className="flex flex-col items-end p-4 sm:p-6 text-right transition hover:bg-white/[0.03] group"
+                    className="flex flex-col items-end p-4 sm:p-6 text-right transition hover:bg-white/[0.04] group"
                   >
-                    <span className="font-corporate text-[9px] tracking-widest text-white/40 uppercase group-hover:text-ember flex items-center gap-1">
+                    <span className="font-corporate text-[9px] tracking-widest text-white/50 uppercase group-hover:text-ember flex items-center gap-1">
                       NEXT DOSSIER <span>→</span>
                     </span>
                     <span className="mt-1 font-display text-xs sm:text-sm font-medium text-white/90 line-clamp-1 group-hover:text-white">
@@ -500,14 +517,14 @@ export function ProjectDossierModal({
           >
             {/* Lightbox Topbar */}
             <div
-              className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-black/50"
+              className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-black/60"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center gap-3">
                 <span className="rounded-full bg-ember/20 border border-ember/40 px-3 py-0.5 font-corporate text-[9px] font-bold text-ember">
                   PHOTO {lightboxIndex + 1} OF {galleryItems.length}
                 </span>
-                <span className="font-corporate text-xs text-white/70 hidden sm:inline">
+                <span className="font-corporate text-xs text-white/80 hidden sm:inline">
                   {galleryItems[lightboxIndex]?.badge || project.title}
                 </span>
               </div>
@@ -528,7 +545,6 @@ export function ProjectDossierModal({
               className="relative flex-1 flex items-center justify-center p-4 sm:p-8"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Prev Button */}
               {galleryItems.length > 1 && (
                 <button
                   type="button"
@@ -542,7 +558,6 @@ export function ProjectDossierModal({
                 </button>
               )}
 
-              {/* Main Image with object-contain to preserve 100% full aspect ratio without cropping */}
               <div className="relative w-full h-full max-w-6xl max-h-[82vh] flex items-center justify-center">
                 <Image
                   src={galleryItems[lightboxIndex].src}
@@ -554,7 +569,6 @@ export function ProjectDossierModal({
                 />
               </div>
 
-              {/* Next Button */}
               {galleryItems.length > 1 && (
                 <button
                   type="button"
@@ -571,10 +585,10 @@ export function ProjectDossierModal({
 
             {/* Lightbox Bottom Caption */}
             <div
-              className="px-6 py-4 border-t border-white/10 bg-black/75 text-center"
+              className="px-6 py-4 border-t border-white/10 bg-black/80 text-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <p className="max-w-3xl mx-auto text-xs sm:text-sm text-white/90">
+              <p className="max-w-3xl mx-auto text-xs sm:text-sm text-white/95">
                 {galleryItems[lightboxIndex]?.caption}
               </p>
             </div>

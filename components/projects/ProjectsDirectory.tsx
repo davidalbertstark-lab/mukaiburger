@@ -79,9 +79,11 @@ export function ProjectsDirectory({ projects }: ProjectsDirectoryProps) {
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-ink/10">
                     <Image
-                      src={p.image}
+                      src={p.image.endsWith(".webp") ? p.image.replace(".webp", "-thumb.webp") : p.image}
                       alt={p.title}
                       fill
+                      loading="lazy"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                     <div className="absolute top-3 left-3">
@@ -175,9 +177,11 @@ export function ProjectsDirectory({ projects }: ProjectsDirectoryProps) {
                   >
                     <div className="relative aspect-[16/9] overflow-hidden bg-ink/10">
                       <Image
-                        src={p.image}
+                        src={p.image.endsWith(".webp") ? p.image.replace(".webp", "-thumb.webp") : p.image}
                         alt={p.title}
                         fill
+                        loading="lazy"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                       <div className="absolute top-3 left-3 flex flex-wrap gap-2">
@@ -185,8 +189,8 @@ export function ProjectsDirectory({ projects }: ProjectsDirectoryProps) {
                           {p.category.toUpperCase()}
                         </span>
                         {hasGallery && (
-                          <span className="rounded-full bg-ember/90 px-2.5 py-1 font-corporate text-[8px] font-bold tracking-wider text-white backdrop-blur-sm shadow-md animate-pulse">
-                            ★ 8-PART PHOTO ARCHIVE
+                          <span className="rounded-full bg-ember px-3 py-1 font-corporate text-[8px] font-bold tracking-wider text-white backdrop-blur-sm shadow-md flex items-center gap-1.5">
+                            <span>★</span> 10-PART HIGH-RISE &amp; SITE ARCHIVE
                           </span>
                         )}
                       </div>
@@ -293,9 +297,11 @@ export function ProjectsDirectory({ projects }: ProjectsDirectoryProps) {
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-ink/10">
                     <Image
-                      src={p.image}
+                      src={p.image.endsWith(".webp") ? p.image.replace(".webp", "-thumb.webp") : p.image}
                       alt={p.title}
                       fill
+                      loading="lazy"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                     <div className="absolute top-3 left-3">
