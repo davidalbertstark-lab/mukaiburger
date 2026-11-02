@@ -438,7 +438,7 @@ export function ProjectDossierModal({
 
                   <div className="flex flex-wrap items-center gap-3">
                     <a
-                      href={`https://wa.me/2348037145719?text=${whatsappMessage}`}
+                      href={`https://wa.me/2348032447065?text=${whatsappMessage}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-semibold text-white shadow-md shadow-emerald-900/20 transition hover:bg-emerald-500 hover:scale-102"
