@@ -17,7 +17,7 @@ export const IMGS = {
   sec_educational: "/projects/cbn-centre-enugu.jpg",
   sec_industrial: "/projects/dangote-petroleum-refinery-civil-works.jpg",
   sec_infra: "/projects/calabar-ugep-box-culvert.jpg",
-  sec_institutional: "/projects/jos-stadium-works.jpg",
+  sec_institutional: "/projects/jos-stadium/jos-stadium-grandstand-supervision-master.webp",
 } as const;
 
 export const SOCIAL_LINKS = [
@@ -106,15 +106,68 @@ export const VERIFIED_PROJECTS: Project[] = [
   },
   {
     slug: "jos-stadium-regional-infrastructure",
-    title: "Jos Stadium & Regional Civil Infrastructure",
+    title: "Jos International Stadium & Regional Civil Infrastructure",
     location: "Jos, Plateau State",
-    category: "Sports & Urban Infrastructure",
+    category: "Sports & Regional Civic Infrastructure",
     pillar: "infrastructure",
     year: "2013 – 2015",
-    image: "/projects/jos-stadium-works.jpg",
+    image: "/projects/jos-stadium/jos-stadium-grandstand-supervision-master.webp",
     client: "Plateau State Government",
-    scope: "Multi-billion Naira stadium structural works, steel roof grandstand trusses, urban arterial road dualizations, and storm drainage networks.",
-    description: "Heavy civic and regional sporting infrastructure engineered for high-density public assembly.",
+    clientPartner: "Plateau State Government / Ministry of Housing & Transport",
+    directorInCharge: "Engr. Azeez Mukailah Matthew Adewale, FNSE, COREN",
+    status: "Completed & Commissioned",
+    scope: "Colossal 44,000-capacity regional stadium civil works, reinforced concrete tiered grandstand bowl, long-span structural steel roof trusses, high-precision pitch leveling and optical theodolite geodetic survey, red polyurethane synthetic athletics track installation, high-capacity arterial access roads, and stormwater drainage networks.",
+    description: "A landmark multi-billion Naira civic sports arena and regional infrastructure development engineered to international standards, delivering massive reinforced concrete cantilever grandstand structures, long-span steel space-frame roof canopies, and extensive surrounding urban civil works.",
+    challenge: "Constructing a high-capacity 44,000-seat stadium bowl on Plateau State's rocky highland terrain demanded micro-tolerance radial setting-out and complex structural load transfer. Cantilever reinforced concrete raker beams had to support multi-tiered precast seating units under severe dynamic crowd loading, while long-span structural steel roof trusses required precision crane rigging at substantial heights without disturbing ongoing pitch civil works or subgrade drainage.",
+    execution: "Under the direct leadership of Engr. Azeez Mukailah (FNSE, COREN) collaborating with international stadium engineering consultants, the team executed comprehensive optical theodolite and total station radial grid setting-out. Heavy telescopic cranes mobilized to hoist and bolt prefabricated steel roof trusses onto massive reinforced concrete columns. Precision earthworks leveled the competition pitch, laid specialized sub-base drainage layers, and installed the certified red polyurethane athletics track alongside heavy perimeter road dualizations.",
+    metrics: [
+      { label: "Seating Capacity", value: "44,000-Seat Stadium Bowl" },
+      { label: "Structural Framing", value: "Reinforced Concrete Raker Beams" },
+      { label: "Canopy Structure", value: "Long-Span Steel Space-Frame Trusses" },
+      { label: "Athletics Facility", value: "Certified Red Polyurethane Track" },
+      { label: "Engineering Oversight", value: "Engr. Azeez Mukailah (COREN/FNSE)" },
+      { label: "Commissioning Body", value: "Plateau State Government" },
+    ],
+    highlights: [
+      "Colossal reinforced concrete grandstand bowl with multi-tier seating rakers engineered for dynamic crowd assembly",
+      "Direct collaboration between Engr. Azeez Mukailah (FNSE, COREN) and international stadium technical consultants",
+      "Precision optical theodolite and total station radial setting-out for micro-tolerance column and pitch alignment",
+      "Heavy crane logistics hoisting long-span structural steel space-frame roof trusses over upper grandstands",
+      "Installation of international standard red polyurethane synthetic athletics running track and sub-pitch drainage",
+      "Integrated perimeter civil infrastructure including reinforced storm canals, security gates, and arterial access roads",
+    ],
+    gallery: [
+      {
+        src: "/projects/jos-stadium/jos-stadium-grandstand-supervision-master.webp",
+        caption: "Engr. Azeez Mukailah (FNSE, COREN) conferring with international stadium engineering consultant on the pitch, with the colossal reinforced concrete grandstand bowl, seating tiers, and structural framing rising in the background.",
+        badge: "STADIUM BOWL & EXECUTIVE DIRECTERSHIP",
+        orientation: "landscape",
+      },
+      {
+        src: "/projects/jos-stadium/jos-stadium-theodolite-survey-team.webp",
+        caption: "Precision optical theodolite and total station field surveying directed by Engr. Mukailah on the stadium pitch, verifying micro-tolerance levels and radial column alignment for the rising grandstand bowl.",
+        badge: "OPTICAL THEODOLITE FIELD SURVEY",
+        orientation: "portrait",
+      },
+      {
+        src: "/projects/jos-stadium/jos-stadium-engr-mukailah-pitch-survey.webp",
+        caption: "Engr. Azeez Mukailah on the stadium pitch executing precision geometric setting-out for perimeter track curves, drainage channels, and grandstand foundation coordinates.",
+        badge: "FIELD ENGINEERING & SETTING-OUT",
+        orientation: "portrait",
+      },
+      {
+        src: "/projects/jos-stadium/jos-stadium-crane-steel-roof-truss.webp",
+        caption: "Heavy mobile telescopic crane lifting massive structural steel space-frame roof trusses onto the grandstand superstructure, overlooking the installed red polyurethane athletics track and civil crews.",
+        badge: "CRANE LOGISTICS & STEEL CANOPY",
+        orientation: "portrait",
+      },
+      {
+        src: "/projects/jos-stadium/jos-stadium-exterior-canopy-civil-works.webp",
+        caption: "Panoramic exterior perspective of Jos International Stadium showing the completed cantilever entrance structures, perimeter steel roof canopy, security perimeter, and surrounding civil access road infrastructure.",
+        badge: "CIVIC ENVELOPE & SITE ACCESS",
+        orientation: "portrait",
+      },
+    ],
   },
 
   // Pillar 2: Ultra-Luxury High-Rise & Island Enclaves
