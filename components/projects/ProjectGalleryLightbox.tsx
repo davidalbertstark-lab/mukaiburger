@@ -64,7 +64,7 @@ export function ProjectGalleryLightbox({ items, projectTitle }: ProjectGalleryLi
       {/* ── FILTER CHIPS ── */}
       {items.length > 3 && (
         <div className="flex flex-wrap items-center gap-2 mb-8">
-          <span className="text-[10px] font-corporate tracking-widest text-white/40 uppercase mr-1">
+          <span className="text-[10px] font-corporate tracking-widest text-muted-foreground uppercase mr-1">
             VIEW EVIDENCE:
           </span>
           {categories.map((cat) => (
@@ -74,8 +74,8 @@ export function ProjectGalleryLightbox({ items, projectTitle }: ProjectGalleryLi
               onClick={() => setSelectedFilter(cat)}
               className={`rounded-full px-4 py-1.5 text-xs font-medium transition-all ${
                 selectedFilter === cat
-                  ? "bg-ember text-white shadow-lg shadow-ember/20 font-semibold"
-                  : "bg-white/[0.04] text-white/70 hover:bg-white/[0.08] hover:text-white border border-white/10"
+                  ? "bg-ember text-white shadow-md shadow-ember/20 font-semibold"
+                  : "bg-background text-ink/75 hover:bg-secondary hover:text-ink border border-border shadow-2xs"
               }`}
             >
               {cat}
@@ -98,7 +98,7 @@ export function ProjectGalleryLightbox({ items, projectTitle }: ProjectGalleryLi
             <div
               key={`${item.src}-${idx}`}
               onClick={() => setActiveIdx(originalIdx)}
-              className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-[#161b24] cursor-zoom-in transition-all duration-300 hover:border-ember/60 hover:shadow-2xl hover:-translate-y-1 ${
+              className={`group relative overflow-hidden rounded-2xl border border-border bg-black cursor-zoom-in transition-all duration-300 hover:border-ember/60 hover:shadow-2xl hover:-translate-y-1 ${
                 isLandscape ? "sm:col-span-1 aspect-[16/11]" : "sm:col-span-1 aspect-[4/5]"
               }`}
             >
