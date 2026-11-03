@@ -364,9 +364,9 @@ export const VERIFIED_PROJECTS: Project[] = [
         orientation: "landscape",
       },
       {
-        src: "/projects/plot-k14/plot-k14-sermatech-resident-project-director.webp",
-        caption: "Sermatech Nigeria Limited Senior Resident Project Engineer in certified safety helmet and high-visibility field vest inspecting structural falsework and cantilever slab progression overlooking the Lagos Lagoon.",
-        badge: "SERMATECH RESIDENT PROJECT DIRECTOR",
+        src: "/projects/plot-k14/plot-k14-suspended-slab-qa-audit.webp",
+        caption: "Sermatech engineering inspection team conducting structural quality assurance logging with digital tablet under the acoustic hollow-pot ribbed concrete floor slab on an active upper deck.",
+        badge: "SUSPENDED SLAB & COLUMN QA",
         orientation: "landscape",
       },
       {
@@ -394,10 +394,10 @@ export const VERIFIED_PROJECTS: Project[] = [
         orientation: "landscape",
       },
       {
-        src: "/projects/plot-k14/plot-k14-cantilever-balcony-city-panorama.webp",
-        caption: "Senior structural engineers and Sermatech site project director auditing cantilever balcony perimeter edge tolerances, guardrails, and floor slab levels high above the Banana Island and Ikoyi skyline.",
-        badge: "CANTILEVER SLAB & CITY PANORAMA",
-        orientation: "landscape",
+        src: "/projects/plot-k14/plot-k14-column-starter-rebar-inspection.webp",
+        caption: "Sermatech project engineers in certified safety helmets and high-visibility vests auditing the vertical column starter rebar cage and structural links on the elevated perimeter deck.",
+        badge: "HIGH-TENSILE COLUMN REBAR CAGE",
+        orientation: "portrait",
       },
       {
         src: "/projects/plot-k14/plot-k14-shear-core-qa-pour-inspection.webp",
