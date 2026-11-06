@@ -672,12 +672,6 @@ export const VERIFIED_PROJECTS: Project[] = [
         orientation: "portrait",
       },
       {
-        src: "/projects/yobe/yobe-gashua-drainage-trench-rebar-cage-blinding.webp",
-        caption: "Deep continuous drainage canal trench excavation along residential compound wall, with prefabricated steel rebar cage placed and bottom blinding concrete poured at dusk.",
-        badge: "TRENCH EXCAVATION & INVERT BLINDING",
-        orientation: "portrait",
-      },
-      {
         src: "/projects/yobe/yobe-gashua-continuous-drain-timber-shuttering-casting.webp",
         caption: "Monolithic reinforced concrete line canal casting: rigid timber formwork shutters clamped along both vertical walls, fresh concrete placed, with local school pupils in uniform observing.",
         badge: "MONOLITHIC CANAL CASTING",
